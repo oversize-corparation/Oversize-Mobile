@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       routerConfig: AppRouter.router,
       title: 'Oversize',
       theme: ThemeData(
