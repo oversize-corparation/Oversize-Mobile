@@ -1,8 +1,5 @@
-import 'package:dotted_border/dotted_border.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:oversize/config/widgets/button_widget.dart';
+import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:oversize/features/auth/presentation/export.dart';
-import 'package:oversize/features/auth/presentation/widgets/textfield_widget.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
@@ -10,24 +7,25 @@ class CreateAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            SvgPicture.asset(AppImages.bubbleCreate, color: Color(0xff3F5EFB)),
-            Align(
-              alignment: Alignment(1, -1),
-              child: SvgPicture.asset(
-                AppImages.bubbleCreate2,
-                color: Color(0xffEB00CB),
-              ),
+      backgroundColor: AppColor.white,
+      body: Stack(
+        children: [
+          SvgPicture.asset(AppImages.bubbleCreate, color: AppColor.bubble1),
+          Align(
+            alignment: Alignment(1, -1),
+            child: SvgPicture.asset(
+              AppImages.bubbleCreate2,
+              color: AppColor.bubble2,
             ),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+          ),
+          SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 40),
+                  SizedBox(height: 80),
                   Text(
                     "Create\nAccount",
                     style: GoogleFonts.raleway(
@@ -45,7 +43,6 @@ class CreateAccountScreen extends StatelessWidget {
                     child: DottedBorder(
                       options: OvalDottedBorderOptions(
                         dashPattern: [20, 5],
-
                         strokeWidth: 2,
                         color: AppColor.deepPurple,
                       ),
@@ -62,40 +59,49 @@ class CreateAccountScreen extends StatelessWidget {
 
                   // Email
                   TextfieldWidget(hint: 'Email'),
-                  SizedBox(height: 16),
-
+                  SizedBox(height: 8),
                   // Password
-                  TextFormField(
-                    obscureText: true,
+                  TextfieldWidget(hint: 'Password', isPassword: true),
+                  SizedBox(height: 8),
+
+                  // Phone number
+                  IntlPhoneField(
+                    disableLengthCheck: true,
+                    flagsButtonPadding: EdgeInsetsGeometry.only(left: 20),
+                    dropdownIconPosition: IconPosition.trailing,
+                    dropdownDecoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                    ),
+                    pickerDialogStyle: PickerDialogStyle(
+                      backgroundColor: AppColor.white,
+                    ),
                     decoration: InputDecoration(
-                      hintText: 'Password',
+                      hintText: 'Your number',
                       filled: true,
-                      fillColor: Colors.grey.shade100,
-                      suffixIcon: Icon(Iconsax.eye_slash4),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                      hintStyle: GoogleFonts.poppins(
+                        color: AppColor.hintColor,
+                        fontSize: 13.83,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      fillColor: AppColor.fillColor,
+                      constraints: BoxConstraints(),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 15,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32),
                         borderSide: BorderSide.none,
                       ),
                     ),
+                    initialCountryCode: 'UZ', // Dastlabki mamlakat kodi
+                    dropdownIcon: Icon(
+                      Icons
+                          .keyboard_arrow_down_rounded, // Dropdown ikonasini o‘ng tomonga joylashtirish
+                      color: AppColor.dropIcon, // Ikonaning rangi
+                    ),
+                    showDropdownIcon: true, // Dropdown ikonasi ko‘rsatilsin
                   ),
-
-                  SizedBox(height: 16),
-
-                  // Phone number
-                  // IntlPhoneField(
-                  //   decoration: InputDecoration(
-                  //     hintText: 'Your number',
-                  //     filled: true,
-                  //     fillColor: Colors.grey.shade100,
-                  //     contentPadding: EdgeInsets.symmetric(horizontal: 20.w),
-                  //     border: OutlineInputBorder(
-                  //       borderRadius: BorderRadius.circular(32.r),
-                  //       borderSide: BorderSide.none,
-                  //     ),
-                  //   ),
-                  //   initialCountryCode: 'GB',
-                  // ),
                   SizedBox(height: 32),
 
                   // Done button
@@ -105,18 +111,24 @@ class CreateAccountScreen extends StatelessWidget {
                   // Cancel
                   Center(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Text(
                         "Cancel",
-                        style: TextStyle(color: Colors.black54, fontSize: 16),
+                        style: GoogleFonts.nunitoSans(
+                          color: AppColor.cancel,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
