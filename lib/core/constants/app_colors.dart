@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:oversize/features/start/presentation/screens/export.dart';
 
 AppColor appColor = AppColor();
 
@@ -15,4 +15,8 @@ class AppColor {
   // static const Color lightGray50 = Color.fromRGBO(64, 79, 111, 0.50);
   // static const Color darkBlue500 = Color(0xFF404F6F);
   // static const Color lightGray700 = Color(0xFF939497);
+  static const Color deepPurple = Color(0xffA73AFD);
+  static const Color boxShadow = Color(0x29000000);
+  static const Color white = Colors.white;
+  static const Color buttonText = Color(0xffF3F3F3);
 }

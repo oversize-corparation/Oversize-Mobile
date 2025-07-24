@@ -1,10 +1,4 @@
-import 'package:go_router/go_router.dart';
-import 'package:oversize/features/card/presentation/screens/card_screen.dart';
-import 'package:oversize/features/category/presentation/screens/category_screen.dart';
-import 'package:oversize/features/favourite/presentation/screens/favourite_screen.dart';
-import 'package:oversize/features/home/presentation/screens/home_screen.dart';
-import 'package:oversize/features/main/main_screen.dart';
-import 'package:oversize/features/profile/presentation/screens/profile_screen.dart';
+import 'package:oversize/core/routes/export.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -12,14 +6,81 @@ class AppRouter {
   static String favourite = "/favourite";
   static String card = "/card";
   static String profile = "/profile";
-
+  static String start = '/start';
+  static String login = '/login';
+  static String createAccount = '/createAccount';
   static GoRouter router = GoRouter(
-    initialLocation: home,
+    initialLocation: start,
     routes: [
+      GoRoute(
+        path: AppRouter.start,
+        name: AppRouter.start,
+        builder: (context, state) {
+          return StartScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.login,
+        name: AppRouter.login,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child: const LoginScreen(),
+            transitionDuration: const Duration(milliseconds: 300), // optional
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  final offsetAnimation =
+                      Tween<Offset>(
+                        begin: const Offset(1.0, 0.0), // from right
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeInOut,
+                        ),
+                      );
+
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                },
+          );
+        },
+      ),
+
+      GoRoute(
+        path: AppRouter.createAccount,
+        name: AppRouter.createAccount,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child: const CreateAccountScreen(),
+            transitionDuration: const Duration(milliseconds: 300), // optional
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  final offsetAnimation =
+                      Tween<Offset>(
+                        begin: const Offset(1.0, 0.0), // from right
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeInOut,
+                        ),
+                      );
+
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                },
+          );
+        },
+      ),
       StatefulShellRoute.indexedStack(
-        builder:
-            (context, state, navigationShell) =>
-                MainScreen(navigationShell: navigationShell),
+        builder: (context, state, navigationShell) =>
+            MainScreen(navigationShell: navigationShell),
         branches: [
           StatefulShellBranch(
             routes: [
