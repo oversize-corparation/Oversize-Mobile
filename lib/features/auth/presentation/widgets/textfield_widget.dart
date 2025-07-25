@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:oversize/core/constants/app_colors.dart';
-import 'package:oversize/features/auth/presentation/export.dart';
+import 'package:oversize/features/auth/presentation/auth.dart';
 
 class TextfieldWidget extends StatefulWidget {
   const TextfieldWidget({

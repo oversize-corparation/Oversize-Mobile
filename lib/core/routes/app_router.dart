@@ -1,4 +1,4 @@
-import 'package:oversize/core/routes/export.dart';
+import 'package:oversize/core/routes/export_route.dart';
 
 class AppRouter {
   static String home = "/home";

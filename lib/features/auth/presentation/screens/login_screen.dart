@@ -1,4 +1,4 @@
-import 'package:oversize/features/auth/presentation/export.dart';
+import 'package:oversize/features/auth/presentation/auth.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

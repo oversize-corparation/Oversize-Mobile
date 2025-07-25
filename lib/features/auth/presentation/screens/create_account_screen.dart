@@ -1,5 +1,5 @@
 import 'package:intl_phone_field/country_picker_dialog.dart';
-import 'package:oversize/features/auth/presentation/export.dart';
+import 'package:oversize/features/auth/presentation/auth.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
