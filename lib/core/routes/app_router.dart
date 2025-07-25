@@ -1,5 +1,9 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/screens/otp_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/currency_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/language_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/setting_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/sizes_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -11,9 +15,15 @@ class AppRouter {
   static String login = '/login';
   static String createAccount = '/createAccount';
   static String otp = '/otp';
+  static String settings = '/settings';
+  static String language = '/language';
+  static String currency = '/currency';
+  static String size = '/size';
 
   static GoRouter router = GoRouter(
     initialLocation: start,
+
+    // initialLocation: profile,
     routes: [
       GoRoute(
         path: AppRouter.start,
@@ -170,6 +180,34 @@ class AppRouter {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: AppRouter.settings,
+        name: AppRouter.settings,
+        builder: (context, state) {
+          return SettingScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.language,
+        name: AppRouter.language,
+        builder: (context, state) {
+          return LanguageScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.currency,
+        name: AppRouter.currency,
+        builder: (context, state) {
+          return CurrencyScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.size,
+        name: AppRouter.size,
+        builder: (context, state) {
+          return SizesScreen();
+        },
       ),
     ],
   );
