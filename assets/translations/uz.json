@@ -1,7 +1,19 @@
 {
-    "home": "Home",
-    "favourite": "Favourites",
-    "category": "Categories",
-    "card": "Card",
-    "profile": "Profile"
+    "home": "Asosiy",
+    "favourite": "Sevimlilar",
+    "category": "Kategoriyalar",
+    "card": "Savat",
+    "profile": "Profil",
+    "settings": "Sozlamalar",
+    "personal": "Shaxsiy",
+    "payment": "To'lov turi",
+    "country": "Mamlakat",
+    "shop": "Do‘kon",
+    "account": "Akkount",
+    "language": "Ilova tili",
+    "currency": "Pul birligi",
+    "sizes": "O'lcham",
+    "terms": "Shartlar va qoidalar",
+    "address": "Yetkazib berish manzili",
+    "logout": "Hisobni o'chirish"
 }

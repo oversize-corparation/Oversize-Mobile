@@ -3,5 +3,17 @@
     "favourite": "Favourites",
     "category": "Categories",
     "card": "Card",
-    "profile": "Profile"
+    "profile": "Profile",
+    "settings": "Settings",
+    "personal": "Personal",
+    "payment": "Payment methods",
+    "country": "Country",
+    "shop": "Shop",
+    "account": "Account",
+    "language": "Language",
+    "currency": "Currency",
+    "sizes": "Sizes",
+    "terms": "Terms and Conditions",
+    "address": "Shipping Address",
+    "logout": "Delete account"
 }

@@ -1,7 +1,19 @@
 {
-    "home": "Home",
-    "favourite": "Favourites",
-    "category": "Categories",
-    "card": "Card",
-    "profile": "Profile"
+    "home": "Главная",
+    "favourite": "Избранное",
+    "category": "Категории",
+    "card": "Корзина",
+    "profile": "Профиль",
+    "settings": "Настройки",
+    "personal": "Личный",
+    "payment": "Способы оплаты",
+    "country": "Страна",
+    "shop": "Магазин",
+    "account": "Аккаунт",
+    "language": "Язык",
+    "currency": "Валюта",
+    "sizes": "Размер",
+    "terms": "Условия и положения",
+    "address": "Адрес доставки",
+    "logout": "Удалить аккаунт"
 }

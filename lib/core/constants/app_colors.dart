@@ -10,7 +10,7 @@ class AppColor {
   // static const Color lightGray400 = Color(0xFFE3E8F0);
   // static const Color lightGreen = Color(0xFF6EC207);
   // static const Color lightGray600 = Color(0xFFB8C2D1);
-  // static const Color primaryDark = Color(0xFF2C3955);
+  static const Color primaryDark = Color(0xFF2C3955);
   // static const Color homeCategoryItem = Color(0xFFF7F7F7);
   // static const Color lightGray50 = Color.fromRGBO(64, 79, 111, 0.50);
   // static const Color darkBlue500 = Color(0xFF404F6F);
@@ -26,5 +26,6 @@ class AppColor {
   static const Color fillColor = Color(0xffF8F8F8);
   static const Color hintColor = Color(0xffD2D2D2);
   static const Color dropIcon = Color(0xff1F1F1F);
-  static const Color deepBlack=Color(0xff000000);
+  static const Color deepBlack = Color(0xff000000);
+  static const Color circleBlur = Color(0xFFE5EBFC);
 }
