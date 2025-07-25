@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oversize/config/widgets/button_widget.dart';
 import 'package:oversize/core/routes/app_router.dart';
-import 'package:oversize/features/start/presentation/screens/export.dart';
+import 'package:oversize/features/start/presentation/screens/start.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});

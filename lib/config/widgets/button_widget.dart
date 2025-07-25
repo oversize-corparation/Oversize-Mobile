@@ -1,4 +1,4 @@
-import 'package:oversize/features/start/presentation/screens/export.dart';
+import 'package:oversize/features/start/presentation/screens/start.dart';
 
 class ButtonWidget extends StatelessWidget {
   final void Function()? onPressed;

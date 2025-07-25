@@ -1,5 +1,8 @@
-import 'package:intl_phone_field/country_picker_dialog.dart';
+import 'package:oversize/core/routes/app_router.dart';
+import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
+import 'package:oversize/features/auth/presentation/widgets/imagepicker_widget.dart';
+import 'package:oversize/features/auth/presentation/widgets/phonefield_widget.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
@@ -37,23 +40,7 @@ class CreateAccountScreen extends StatelessWidget {
                   SizedBox(height: 40),
 
                   // Avatar upload icon
-                  SizedBox(
-                    width: 90,
-                    height: 90,
-                    child: DottedBorder(
-                      options: OvalDottedBorderOptions(
-                        dashPattern: [20, 5],
-                        strokeWidth: 2,
-                        color: AppColor.deepPurple,
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.camera_alt_outlined,
-                          color: AppColor.deepPurple,
-                        ),
-                      ),
-                    ),
-                  ),
+                  ImagePickerWidget(),
 
                   SizedBox(height: 32),
 
@@ -65,47 +52,16 @@ class CreateAccountScreen extends StatelessWidget {
                   SizedBox(height: 8),
 
                   // Phone number
-                  IntlPhoneField(
-                    disableLengthCheck: true,
-                    flagsButtonPadding: EdgeInsetsGeometry.only(left: 20),
-                    dropdownIconPosition: IconPosition.trailing,
-                    dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32),
-                    ),
-                    pickerDialogStyle: PickerDialogStyle(
-                      backgroundColor: AppColor.white,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Your number',
-                      filled: true,
-                      hintStyle: GoogleFonts.poppins(
-                        color: AppColor.hintColor,
-                        fontSize: 13.83,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fillColor: AppColor.fillColor,
-                      constraints: BoxConstraints(),
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 15,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                    initialCountryCode: 'UZ', // Dastlabki mamlakat kodi
-                    dropdownIcon: Icon(
-                      Icons
-                          .keyboard_arrow_down_rounded, // Dropdown ikonasini o‘ng tomonga joylashtirish
-                      color: AppColor.dropIcon, // Ikonaning rangi
-                    ),
-                    showDropdownIcon: true, // Dropdown ikonasi ko‘rsatilsin
-                  ),
+                  PhonefieldWidget(),
                   SizedBox(height: 32),
 
                   // Done button
-                  ButtonWidget(onPressed: () {}, text: 'Done'),
+                  ButtonWidget(
+                    onPressed: () {
+                      context.pushNamed(AppRouter.otp);
+                    },
+                    text: 'Done',
+                  ),
                   SizedBox(height: 16),
 
                   // Cancel

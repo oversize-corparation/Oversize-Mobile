@@ -1,4 +1,4 @@
-import 'package:oversize/features/start/presentation/screens/export.dart';
+import 'package:oversize/features/start/presentation/screens/start.dart';
 
 AppColor appColor = AppColor();
 
@@ -26,4 +26,5 @@ class AppColor {
   static const Color fillColor = Color(0xffF8F8F8);
   static const Color hintColor = Color(0xffD2D2D2);
   static const Color dropIcon = Color(0xff1F1F1F);
+  static const Color deepBlack=Color(0xff000000);
 }

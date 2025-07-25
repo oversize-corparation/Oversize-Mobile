@@ -1,4 +1,5 @@
 import 'package:oversize/core/routes/export_route.dart';
+import 'package:oversize/features/auth/presentation/screens/otp_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -9,6 +10,8 @@ class AppRouter {
   static String start = '/start';
   static String login = '/login';
   static String createAccount = '/createAccount';
+  static String otp = '/otp';
+
   static GoRouter router = GoRouter(
     initialLocation: start,
     routes: [
@@ -56,6 +59,35 @@ class AppRouter {
           return CustomTransitionPage(
             key: state.pageKey,
             child: const CreateAccountScreen(),
+            transitionDuration: const Duration(milliseconds: 300), // optional
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  final offsetAnimation =
+                      Tween<Offset>(
+                        begin: const Offset(1.0, 0.0), // from right
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeInOut,
+                        ),
+                      );
+
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                },
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRouter.otp,
+        name: AppRouter.otp,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child: const OtpScreen(),
             transitionDuration: const Duration(milliseconds: 300), // optional
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
