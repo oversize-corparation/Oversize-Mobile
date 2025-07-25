@@ -21,8 +21,8 @@ class AppColor {
   static const Color buttonText = Color(0xffF3F3F3);
   static const Color bubble1 = Color(0xffD9E4FF);
   static const Color bubble2 = Color(0xffE03EDA);
-    static const Color bubble3 = Color(0xffF2F5FE);
-static const Color cancel=Color(0xff202020);
+  static const Color bubble3 = Color(0xffF2F5FE);
+  static const Color cancel = Color(0xff202020);
   static const Color fillColor = Color(0xffF8F8F8);
   static const Color hintColor = Color(0xffD2D2D2);
   static const Color dropIcon = Color(0xff1F1F1F);
