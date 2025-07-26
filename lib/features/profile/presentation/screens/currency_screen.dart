@@ -12,7 +12,11 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("currency".tr())),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text("currency".tr()),
+      ),
       body: Column(
         children: [
           _buildRadioTile(const Locale('uz'), '\$ USD'),

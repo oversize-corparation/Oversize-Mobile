@@ -26,7 +26,11 @@ class _LanguageScreenState extends State<LanguageScreen> {
   Widget build(BuildContext context) {
     final currentLocale = _selectedLocale ?? context.locale;
     return Scaffold(
-      appBar: AppBar(title: Text("language".tr())),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("language".tr()),
+        backgroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           _buildRadioTile(const Locale('uz'), 'O\'zbekcha', currentLocale),
