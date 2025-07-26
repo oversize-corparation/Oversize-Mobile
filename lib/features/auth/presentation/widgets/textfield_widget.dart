@@ -6,10 +6,12 @@ class TextfieldWidget extends StatefulWidget {
     super.key,
     required this.hint,
     this.isPassword = false,
+    this.color,
   });
 
   final String hint;
   final bool isPassword;
+  final Color? color;
 
   @override
   State<TextfieldWidget> createState() => _TextfieldWidgetState();
@@ -31,7 +33,7 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
       decoration: InputDecoration(
         hintText: widget.hint,
         filled: true,
-        fillColor: AppColor.fillColor,
+        fillColor: widget.color ?? AppColor.fillColor,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,
           vertical: 15,

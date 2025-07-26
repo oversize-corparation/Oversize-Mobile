@@ -5,9 +5,9 @@ AppColor appColor = AppColor();
 class AppColor {
   AppColor();
   static const Color darkBlue = Color(0xFF004CFF);
-  // static const Color lightGray200 = Color(0xFFF2F5FA);
+  static const Color lightBlue = Color(0xFFF1F4FE);
   // static const Color lightGray500 = Color(0xFFD0D8E5);
-  // static const Color lightGray400 = Color(0xFFE3E8F0);
+  static const Color lightGray400 = Color(0xFFE3E8F0);
   // static const Color lightGreen = Color(0xFF6EC207);
   // static const Color lightGray600 = Color(0xFFB8C2D1);
   static const Color primaryDark = Color(0xFF2C3955);

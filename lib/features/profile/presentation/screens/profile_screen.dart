@@ -12,23 +12,34 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         // leading: CircleAvatar(),
         actions: [
-          ProfileButton(ontap: () {}, icon: AppImages.vaucher),
+          ProfileButton(
+            ontap: () {},
+            icon: SvgPicture.asset(AppImages.vaucher),
+            color: AppColor.circleBlur,
+          ),
           10.w,
           Badge(
             smallSize: 13,
             largeSize: 60,
             backgroundColor: AppColor.darkBlue,
-            child: ProfileButton(ontap: () {}, icon: AppImages.menu),
+            child: ProfileButton(
+              ontap: () {},
+              icon: SvgPicture.asset(AppImages.menu),
+              color: AppColor.circleBlur,
+            ),
           ),
           10.w,
           ProfileButton(
             ontap: () {
               context.push(AppRouter.settings);
             },
-            icon: AppImages.settings,
+            icon: SvgPicture.asset(AppImages.settings),
+            color: AppColor.circleBlur,
           ),
         ],
       ),

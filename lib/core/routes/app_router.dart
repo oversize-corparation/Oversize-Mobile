@@ -1,10 +1,5 @@
 import 'package:oversize/core/routes/export_route.dart';
-import 'package:oversize/features/app/pin_setup_screen.dart';
-import 'package:oversize/features/auth/presentation/screens/otp_screen.dart';
-import 'package:oversize/features/profile/presentation/screens/currency_screen.dart';
-import 'package:oversize/features/profile/presentation/screens/language_screen.dart';
-import 'package:oversize/features/profile/presentation/screens/setting_screen.dart';
-import 'package:oversize/features/profile/presentation/screens/sizes_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/shipping_adres.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -23,11 +18,12 @@ class AppRouter {
   static String splash = '/splash';
   static String pinSetup = '/pinSetup';
   static String pinApp = '/pinApp';
+  static String editProfile = '/editProfile';
+  static String shippingAdres = '/shippingAdres';
 
   static GoRouter router = GoRouter(
-    initialLocation: start,
-
-    // initialLocation: profile,
+    // initialLocation: start,
+    initialLocation: profile,
     routes: [
       GoRoute(
         path: AppRouter.start,
@@ -124,13 +120,13 @@ class AppRouter {
           );
         },
       ),
-        GoRoute(
+      GoRoute(
         path: AppRouter.pinSetup,
         name: AppRouter.pinSetup,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
             key: state.pageKey,
-            child:  PinSetupScreen(),
+            child: PinSetupScreen(),
             transitionDuration: const Duration(milliseconds: 300), // optional
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
@@ -241,6 +237,20 @@ class AppRouter {
         name: AppRouter.size,
         builder: (context, state) {
           return SizesScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.editProfile,
+        name: AppRouter.editProfile,
+        builder: (context, state) {
+          return EditProfile();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.shippingAdres,
+        name: AppRouter.shippingAdres,
+        builder: (context, state) {
+          return ShippingAdres();
         },
       ),
     ],

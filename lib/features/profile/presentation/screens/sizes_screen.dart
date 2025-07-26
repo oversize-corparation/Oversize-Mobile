@@ -12,7 +12,8 @@ class _SizesScreenState extends State<SizesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("sizes".tr())),
+      backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor: Colors.white, title: Text("sizes".tr())),
       body: Column(
         children: [
           _buildRadioTile(const Locale('uz'), 'US'),

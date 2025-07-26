@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/routes/app_router.dart';
@@ -13,6 +14,8 @@ class SettingsBody extends StatefulWidget {
 }
 
 class _SettingsBodyState extends State<SettingsBody> {
+  Country? _selectedCountry;
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -21,27 +24,41 @@ class _SettingsBodyState extends State<SettingsBody> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text("personal".tr(), style: AppStyle.w800s17h22Dark),
         ),
-        ProfileListTile(ontap: () {}, label: "profile"),
-        ProfileListTile(ontap: () {}, label: "address"),
-        ProfileListTile(ontap: () {}, label: "payment"),
+        ProfileListTile(
+          ontap: () {
+            context.push(AppRouter.editProfile);
+          },
+          title: "profile",
+        ),
+        ProfileListTile(
+          ontap: () {
+            context.push(AppRouter.shippingAdres);
+          },
+          title: "address",
+        ),
+        ProfileListTile(ontap: () {}, title: "payment"),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text("shop".tr(), style: AppStyle.w800s17h22Dark),
         ),
-        ProfileListTile(ontap: () {}, label: "country"),
+        ProfileListTile(
+          ontap: _showCountryPicker,
+          title: "country",
+          label: _selectedCountry?.name,
+        ),
         ProfileListTile(
           ontap: () {
             context.push(AppRouter.currency);
           },
-          label: "currency",
+          title: "currency",
         ),
         ProfileListTile(
           ontap: () {
             context.push(AppRouter.size);
           },
-          label: "sizes",
+          title: "sizes",
         ),
-        ProfileListTile(ontap: () {}, label: "terms"),
+        ProfileListTile(ontap: () {}, title: "terms"),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text("account".tr(), style: AppStyle.w800s17h22Dark),
@@ -50,10 +67,10 @@ class _SettingsBodyState extends State<SettingsBody> {
           ontap: () {
             context.push(AppRouter.language);
           },
-          label: "language",
-          lan: language(),
+          title: "language",
+          label: language(),
         ),
-        // ProfileListTile(ontap: () {}, label: "About Slada"),
+        // ProfileListTile(ontap: () {}, title: "About Slada"),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ZoomTapAnimation(
@@ -74,9 +91,12 @@ class _SettingsBodyState extends State<SettingsBody> {
                       onPressed: () {
                         context.pop();
                       },
-                      child: Text("Cancel"),
+                      child: Text("cancel".tr()),
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text("Delete")),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text("delete".tr()),
+                    ),
                   ],
                 ),
               );
@@ -102,5 +122,25 @@ class _SettingsBodyState extends State<SettingsBody> {
     } else {
       return "O'z";
     }
+  }
+
+  void _showCountryPicker() {
+    showCountryPicker(
+      context: context,
+      showPhoneCode: false,
+      onSelect: (Country country) {
+        setState(() {
+          _selectedCountry = country;
+        });
+      },
+      countryListTheme: CountryListThemeData(
+        borderRadius: BorderRadius.circular(10),
+        inputDecoration: InputDecoration(
+          labelText: 'searchCountry'.tr(),
+          hintText: 'searching'.tr(),
+          border: OutlineInputBorder(),
+        ),
+      ),
+    );
   }
 }
