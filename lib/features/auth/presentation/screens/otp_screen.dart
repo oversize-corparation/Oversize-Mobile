@@ -1,10 +1,30 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
-import 'package:pinput/pinput.dart';
+import 'package:oversize/features/auth/presentation/widgets/otp_widget.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
+
+  @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  final FocusNode _otpFocusNode = FocusNode();
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _otpFocusNode.requestFocus();
+    });
+  }
+
+  @override
+  void dispose() {
+    _otpFocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,23 +111,7 @@ class OtpScreen extends StatelessWidget {
                     ),
                   ),
                   28.h,
-                  Pinput(
-                    length: 4,
-                    defaultPinTheme: PinTheme(
-                      textStyle: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      width: 49.3,
-                      height: 50.56,
-                      decoration: BoxDecoration(
-                        color: AppColor.fillColor,
-                        borderRadius: BorderRadius.circular(10.11),
-                      ),
-                    ), // pastel ko‘k rang,
-                    onCompleted: (pin) => print('Entered PIN: $pin'),
-                  ),
+                  OtpWidget(focusNode: _otpFocusNode),
                   Spacer(flex: 5),
                   ButtonWidget(onPressed: () {}, text: 'send'.tr()),
                   16.h,

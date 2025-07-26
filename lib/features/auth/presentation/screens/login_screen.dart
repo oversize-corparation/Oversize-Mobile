@@ -68,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                 // Done button
                 ButtonWidget(
                   onPressed: () {
-                    context.pushNamed(AppRouter.home);
+                    context.pushNamed(AppRouter.pinSetup);
                   },
                   text: 'next'.tr(),
                 ),

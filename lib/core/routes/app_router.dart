@@ -1,4 +1,5 @@
 import 'package:oversize/core/routes/export_route.dart';
+import 'package:oversize/features/app/pin_setup_screen.dart';
 import 'package:oversize/features/auth/presentation/screens/otp_screen.dart';
 import 'package:oversize/features/profile/presentation/screens/currency_screen.dart';
 import 'package:oversize/features/profile/presentation/screens/language_screen.dart';
@@ -19,6 +20,9 @@ class AppRouter {
   static String language = '/language';
   static String currency = '/currency';
   static String size = '/size';
+  static String splash = '/splash';
+  static String pinSetup = '/pinSetup';
+  static String pinApp = '/pinApp';
 
   static GoRouter router = GoRouter(
     initialLocation: start,
@@ -120,6 +124,36 @@ class AppRouter {
           );
         },
       ),
+        GoRoute(
+        path: AppRouter.pinSetup,
+        name: AppRouter.pinSetup,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child:  PinSetupScreen(),
+            transitionDuration: const Duration(milliseconds: 300), // optional
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  final offsetAnimation =
+                      Tween<Offset>(
+                        begin: const Offset(1.0, 0.0), // from right
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeInOut,
+                        ),
+                      );
+
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                },
+          );
+        },
+      ),
+
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             MainScreen(navigationShell: navigationShell),
