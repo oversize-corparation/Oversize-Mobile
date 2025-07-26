@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 
 class PhonefieldWidget extends StatelessWidget {
@@ -14,7 +15,7 @@ class PhonefieldWidget extends StatelessWidget {
       ),
       pickerDialogStyle: PickerDialogStyle(backgroundColor: AppColor.white),
       decoration: InputDecoration(
-        hintText: 'Your number',
+        hintText: 'phonehint'.tr(),
         filled: true,
         hintStyle: GoogleFonts.poppins(
           color: AppColor.hintColor,

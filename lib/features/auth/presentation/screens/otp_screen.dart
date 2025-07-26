@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:pinput/pinput.dart';
 
@@ -58,7 +60,8 @@ class OtpScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Otp success',
+                    textAlign: TextAlign.center,
+                    'otptitle'.tr(),
                     style: GoogleFonts.raleway(
                       color: AppColor.cancel,
                       fontSize: 21,
@@ -66,17 +69,17 @@ class OtpScreen extends StatelessWidget {
                       letterSpacing: -0.21,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  4.h,
                   Text(
                     textAlign: TextAlign.center,
-                    'Enter 4-digits code we sent you on your phone number',
+                    'otpsub'.tr(),
                     style: GoogleFonts.nunitoSans(
                       color: AppColor.deepBlack,
                       fontSize: 19,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  SizedBox(height: 13),
+                  13.h,
                   Text(
                     textAlign: TextAlign.center,
                     '+33*****99',
@@ -87,7 +90,7 @@ class OtpScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(height: 28),
+                  28.h,
                   Pinput(
                     length: 4,
                     defaultPinTheme: PinTheme(
@@ -106,18 +109,15 @@ class OtpScreen extends StatelessWidget {
                     onCompleted: (pin) => print('Entered PIN: $pin'),
                   ),
                   Spacer(flex: 5),
-                  SizedBox(
-                    width: 200,
-                    child: ButtonWidget(onPressed: () {}, text: 'Send Again'),
-                  ),
-                  SizedBox(height: 16),
+                  ButtonWidget(onPressed: () {}, text: 'send'.tr()),
+                  16.h,
                   Center(
                     child: TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
                       child: Text(
-                        "Cancel",
+                        "cancel".tr(),
                         style: GoogleFonts.nunitoSans(
                           color: AppColor.cancel,
                           fontSize: 16,

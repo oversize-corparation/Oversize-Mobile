@@ -15,5 +15,20 @@
     "sizes": "Sizes",
     "terms": "Terms and Conditions",
     "address": "Shipping Address",
-    "logout": "Delete account"
+    "logout": "Delete account",
+    "email":"Email",
+    "createaccount":"Create\nAccount",
+    "password":"Password",
+    "done":"Done",
+    "cancel":"Cancel",
+    "login":"Login",
+    "loginsub":"Good to see you back! 🖤",
+    "next":"Next",
+    "otptitle":"Successful Registration",
+    "otpsub":"Enter 4-digits code we sent you on your phone number",
+    "send":"Send Again",
+    "phonehint":"Your number",
+    "startsub":"More than fashion\nIt’s a statement",
+    "startbutt":"Let`s get started",
+    "already":"I already have an account"
 }

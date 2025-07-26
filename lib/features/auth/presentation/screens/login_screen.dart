@@ -1,3 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:oversize/core/extension/space_extension.dart';
+import 'package:oversize/core/routes/app_router.dart';
+import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -35,35 +39,40 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Spacer(flex: 12),
                 Text(
-                  "Login",
+                  "login".tr(),
                   style: GoogleFonts.raleway(
                     fontSize: 50,
                     fontWeight: FontWeight.w700,
                     letterSpacing: -0.5,
                   ),
                 ),
-                SizedBox(height: 4),
+
+                4.h,
                 Text(
-                  "Good to see you back! 🖤",
+                  "loginsub".tr(),
                   style: GoogleFonts.nunitoSans(
                     fontSize: 19,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
 
-                SizedBox(height: 32),
+                32.h,
 
                 // Email
-                TextfieldWidget(hint: 'Email'),
-                SizedBox(height: 8),
-                // Password
-                TextfieldWidget(hint: 'Password', isPassword: true),
+                TextfieldWidget(hint: 'email'.tr()),
+                8.h, // Password
+                TextfieldWidget(hint: 'password'.tr(), isPassword: true),
 
-                SizedBox(height: 32),
+                32.h,
 
                 // Done button
-                ButtonWidget(onPressed: () {}, text: 'Next'),
-                SizedBox(height: 16),
+                ButtonWidget(
+                  onPressed: () {
+                    context.pushNamed(AppRouter.home);
+                  },
+                  text: 'next'.tr(),
+                ),
+                16.h,
 
                 // Cancel
                 Center(
@@ -72,7 +81,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: Text(
-                      "Cancel",
+                      "cancel".tr(),
                       style: GoogleFonts.nunitoSans(
                         color: AppColor.cancel,
                         fontSize: 16,

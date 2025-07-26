@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
@@ -28,41 +30,41 @@ class CreateAccountScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 80),
+                  80.h,
                   Text(
-                    "Create\nAccount",
+                    "createaccount".tr(),
                     style: GoogleFonts.raleway(
                       fontSize: 50,
                       fontWeight: FontWeight.w700,
                       letterSpacing: -0.5,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  40.h,
 
                   // Avatar upload icon
                   ImagePickerWidget(),
 
-                  SizedBox(height: 32),
+                  32.h,
 
                   // Email
-                  TextfieldWidget(hint: 'Email'),
-                  SizedBox(height: 8),
+                  TextfieldWidget(hint: 'email'.tr()),
+                  8.h,
                   // Password
-                  TextfieldWidget(hint: 'Password', isPassword: true),
-                  SizedBox(height: 8),
+                  TextfieldWidget(hint: 'password'.tr(), isPassword: true),
+                  8.h,
 
                   // Phone number
                   PhonefieldWidget(),
-                  SizedBox(height: 32),
+                  32.h,
 
                   // Done button
                   ButtonWidget(
                     onPressed: () {
                       context.pushNamed(AppRouter.otp);
                     },
-                    text: 'Done',
+                    text: 'done'.tr(),
                   ),
-                  SizedBox(height: 16),
+                  16.h,
 
                   // Cancel
                   Center(
@@ -71,7 +73,7 @@ class CreateAccountScreen extends StatelessWidget {
                         Navigator.pop(context);
                       },
                       child: Text(
-                        "Cancel",
+                        "cancel".tr(),
                         style: GoogleFonts.nunitoSans(
                           color: AppColor.cancel,
                           fontSize: 16,

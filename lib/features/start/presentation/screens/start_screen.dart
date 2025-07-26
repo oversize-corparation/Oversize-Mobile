@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:oversize/config/widgets/button_widget.dart';
+import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/routes/app_router.dart';
-import 'package:oversize/features/start/presentation/screens/start.dart';
+import 'package:oversize/features/start/start.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -36,7 +37,7 @@ class StartScreen extends StatelessWidget {
                 ),
                 child: Image.asset(AppImages.logoBlack, fit: BoxFit.cover),
               ),
-              SizedBox(height: 20),
+              20.h,
               Text(
                 'OverSize',
                 style: GoogleFonts.raleway(
@@ -45,10 +46,10 @@ class StartScreen extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: 10),
+              10.h,
               Text(
                 textAlign: TextAlign.center,
-                'More than fashion\nIt’s a statement',
+                'startsub'.tr(),
                 style: GoogleFonts.nunitoSans(
                   fontSize: 19,
                   fontWeight: FontWeight.w300,
@@ -59,20 +60,20 @@ class StartScreen extends StatelessWidget {
                 onPressed: () {
                   context.pushNamed(AppRouter.createAccount);
                 },
-                text: 'Let`s get started',
+                text: 'startbutt'.tr(),
               ),
-              SizedBox(height: 20),
+              20.h,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'I already have an account',
+                    'already'.tr(),
                     style: GoogleFonts.nunitoSans(
                       fontSize: 15,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  SizedBox(width: 16),
+                  16.w,
                   GestureDetector(
                     onTap: () {
                       context.pushNamed(AppRouter.login);
