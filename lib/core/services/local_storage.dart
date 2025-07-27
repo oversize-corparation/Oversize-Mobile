@@ -1,20 +1,42 @@
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-class LocalStorage {
-  static const String _pinKey = 'user_pin';
+class HiveLocalStorageService {
+  static const String _boxName = 'settings';
+  static late Box _box;
 
-  static Future<void> savePin(String pin) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_pinKey, pin);
+  /// Hive init & box open
+  static Future<void> init() async {
+    await Hive.initFlutter();
+    _box = await Hive.openBox(_boxName);
   }
 
-  static Future<String?> getSavedPin() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_pinKey);
+  /// Save any value by key
+  static Future<void> setValue(String key, dynamic value) async {
+    await _box.put(key, value);
   }
 
-  static Future<void> clearPin() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove(_pinKey);
+  /// Get value by key
+  static T? getValue<T>(String key) {
+    return _box.get(key);
+  }
+
+  /// Check if key exists
+  static bool containsKey(String key) {
+    return _box.containsKey(key);
+  }
+
+  /// Delete specific key
+  static Future<void> delete(String key) async {
+    await _box.delete(key);
+  }
+
+  /// Clear all data
+  static Future<void> clearAll() async {
+    await _box.clear();
+  }
+
+  /// Close box
+  static Future<void> close() async {
+    await _box.close();
   }
 }

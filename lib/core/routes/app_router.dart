@@ -1,5 +1,6 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/profile/presentation/screens/shipping_adres.dart';
+import 'package:oversize/features/splash/splash_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -22,8 +23,8 @@ class AppRouter {
   static String shippingAdres = '/shippingAdres';
 
   static GoRouter router = GoRouter(
-    // initialLocation: start,
-    initialLocation: profile,
+    initialLocation: splash,
+    // initialLocation: profile,
     routes: [
       GoRoute(
         path: AppRouter.start,
@@ -61,7 +62,6 @@ class AppRouter {
           );
         },
       ),
-
       GoRoute(
         path: AppRouter.createAccount,
         name: AppRouter.createAccount,
@@ -149,7 +149,13 @@ class AppRouter {
           );
         },
       ),
-
+      GoRoute(
+        path: AppRouter.splash,
+        name: AppRouter.splash,
+        builder: (context, state) {
+          return SplashScreen();
+        },
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             MainScreen(navigationShell: navigationShell),

@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:oversize/core/routes/app_router.dart';
+import 'package:oversize/core/services/local_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await HiveLocalStorageService.init();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale("en"), Locale("ru"), Locale("uz")],

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:oversize/core/constants/app_colors.dart';
+import 'package:oversize/core/extension/space_extension.dart';
+import 'package:oversize/core/routes/app_router.dart';
+import 'package:oversize/core/services/local_storage.dart';
 
 class PinSetupScreen extends StatefulWidget {
-  PinSetupScreen({super.key});
+  const PinSetupScreen({super.key});
 
   @override
   State<PinSetupScreen> createState() => _PinSetupScreenState();
@@ -26,20 +31,26 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
     }
   }
 
-  void _verifyPin() {
-    // PIN tekshirish joyi
-    String enteredPin = _input.join();
-    if (enteredPin == "1234") {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text("PIN to‘g‘ri!")));
+  Future<void> _verifyPin() async {
+    final enteredPin = _input.join();
+    final savedPin = HiveLocalStorageService.getValue<String>('user_pin');
+
+    if (savedPin == null) {
+      // PIN birinchi marta o‘rnatilmoqda
+      await HiveLocalStorageService.setValue('user_pin', enteredPin);
+      if (context.mounted) context.goNamed(AppRouter.home);
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text("PIN noto‘g‘ri!")));
-      setState(() {
-        _input.clear();
-      });
+      // PIN tekshirilmoqda
+      if (enteredPin == savedPin) {
+        if (context.mounted) context.goNamed(AppRouter.home);
+      } else {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text("PIN noto‘g‘ri!")));
+        setState(() {
+          _input.clear();
+        });
+      }
     }
   }
 
@@ -51,14 +62,14 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
       margin: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: filled ? Colors.black : Colors.transparent,
-        border: Border.all(color: Colors.grey, width: 1.5),
+        color: filled ? AppColor.deepPurple : AppColor.fillColor,
       ),
     );
   }
 
   Widget _buildNumberButton(String number) {
-    return GestureDetector(
+    return InkWell(
+      borderRadius: BorderRadius.circular(35),
       onTap: () {
         _addDigit(number);
         if (_input.length == 4) {
@@ -70,7 +81,7 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
         height: 70,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          color: Color(0xFFF7F9FC),
+          color: AppColor.bubble3,
         ),
         alignment: Alignment.center,
         child: Text(
@@ -88,28 +99,15 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
     );
   }
 
-  Widget _buildFingerprintButton() {
-    return GestureDetector(
-      onTap: () {
-        // Barmoq izi ishlashi
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text("Fingerprint bosildi")));
-      },
-      child: const Icon(Icons.fingerprint, size: 36, color: Colors.teal),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.white,
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 30),
-            const Icon(Icons.lock, size: 40, color: Colors.teal),
-            const SizedBox(height: 16),
+            const Spacer(flex: 3),
             const Text(
               "PIN-kod",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -123,29 +121,30 @@ class _PinSetupScreenState extends State<PinSetupScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(4, _buildPinCircle),
             ),
-
-            Expanded(
-              child: Column(
-                spacing: 10,
-                children: [
-                  for (var row in [
-                    ['1', '2', '3'],
-                    ['4', '5', '6'],
-                    ['7', '8', '9'],
-                    ['←', '0', 'fingerprint'],
-                  ])
-                    Row(
+            const Spacer(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                for (var row in [
+                  ['1', '2', '3'],
+                  ['4', '5', '6'],
+                  ['7', '8', '9'],
+                  ['', '0', '←'],
+                ])
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: row.map((item) {
+                        if (item == '') return 35.w;
                         if (item == '←') return _buildBackspaceButton();
-                        if (item == 'fingerprint')
-                          return _buildFingerprintButton();
                         return _buildNumberButton(item);
                       }).toList(),
                     ),
-                ],
-              ),
+                  ),
+              ],
             ),
+            const Spacer(),
           ],
         ),
       ),

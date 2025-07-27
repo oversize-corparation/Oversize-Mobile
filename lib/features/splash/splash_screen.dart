@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/services/local_storage.dart';
-import 'package:oversize/features/home/presentation/screens/home_screen.dart';
-import 'package:oversize/features/app/pin_code_app_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,32 +14,27 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _checkPinStatus();
+    _initApp();
   }
 
-  Future<void> _checkPinStatus() async {
-    await Future.delayed(const Duration(seconds: 2)); // simulate loading
-    final savedPin = await LocalStorage.getSavedPin();
+  Future<void> _initApp() async {
+    await HiveLocalStorageService.init(); // Hive init qilinadi
+
+    await Future.delayed(const Duration(seconds: 2)); // fake loading
+
+    final savedPin = HiveLocalStorageService.getValue<String>('user_pin');
 
     if (savedPin != null && savedPin.isNotEmpty) {
-      // PIN bor — uni sorash
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const PinCodeAppScreen()),
-      );
+      // Agar PIN mavjud bo‘lsa — Pin kiritish screen
+      context.pushReplacement(AppRouter.pinSetup);
     } else {
-      // PIN yo'q — to'g'ridan-to'g'ri home yoki login screen
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const HomeScreen()), // yoki LoginScreen
-      );
+      // Agar PIN mavjud bo‘lmasa — to‘g‘ridan-to‘g‘ri home screen
+      context.pushReplacement(AppRouter.start);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
-    );
+    return const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }
