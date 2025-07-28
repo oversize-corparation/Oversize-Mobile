@@ -14,12 +14,12 @@ class LoginScreen extends StatelessWidget {
       body: Stack(
         children: [
           SvgPicture.asset(AppImages.bubbleLogin, color: AppColor.bubble1),
-          SvgPicture.asset(AppImages.bubbleLogin2, color: AppColor.bubble2),
+          SvgPicture.asset(AppImages.bubbleLogin2, color: AppColor.deepPurple),
           Align(
             alignment: Alignment(1, -0.3),
             child: SvgPicture.asset(
               AppImages.bubbleLogin4,
-              color: AppColor.bubble2,
+              color: AppColor.deepPurple,
             ),
           ),
           Align(

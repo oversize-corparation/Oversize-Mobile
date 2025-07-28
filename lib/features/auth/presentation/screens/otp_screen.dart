@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/auth/presentation/widgets/otp_widget.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -12,6 +14,7 @@ class OtpScreen extends StatefulWidget {
 
 class _OtpScreenState extends State<OtpScreen> {
   final FocusNode _otpFocusNode = FocusNode();
+
   @override
   void initState() {
     super.initState();
@@ -24,6 +27,44 @@ class _OtpScreenState extends State<OtpScreen> {
   void dispose() {
     _otpFocusNode.dispose();
     super.dispose();
+  }
+
+  void _showDialog() {
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.warning,
+      animType: AnimType.topSlide,
+      title: 'errordialog'.tr(),
+      btnOkText: 'okay'.tr(),
+      buttonsTextStyle: GoogleFonts.nunitoSans(
+        fontSize: 20,
+        fontWeight: FontWeight.w300,
+        color: AppColor.white,
+      ),
+      customHeader: Container(
+        width: 70,
+        height: 70,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Color(0xffFFEBEB),
+        ),
+        child: Icon(Icons.error_rounded, color: Color(0xffF1AEAE), size: 28),
+      ),
+      btnOkOnPress: () {},
+      headerAnimationLoop: false,
+      btnOkColor: AppColor.deepBlack,
+      dialogBorderRadius: BorderRadius.circular(19),
+      bodyHeaderDistance: 2,
+      dialogBackgroundColor: Colors.white,
+      padding: EdgeInsets.only(left: 53, bottom: 20, right: 53),
+      buttonsBorderRadius: BorderRadius.circular(16),
+      titleTextStyle: GoogleFonts.raleway(
+        fontWeight: FontWeight.w400,
+        color: AppColor.deepBlack,
+        fontSize: 18,
+        letterSpacing: -0.18,
+      ),
+    ).show();
   }
 
   @override
@@ -43,7 +84,7 @@ class _OtpScreenState extends State<OtpScreen> {
             alignment: Alignment(1, -1),
             child: SvgPicture.asset(
               AppImages.bubbleOtp2,
-              color: AppColor.bubble2,
+              color: AppColor.deepPurple,
             ),
           ),
           SizedBox(
@@ -113,7 +154,10 @@ class _OtpScreenState extends State<OtpScreen> {
                   28.h,
                   OtpWidget(focusNode: _otpFocusNode),
                   Spacer(flex: 5),
-                  ButtonWidget(onPressed: () {}, text: 'send'.tr()),
+                  ButtonWidget(
+                    onPressed: _showDialog, // Show dialog when clicked
+                    text: 'send'.tr(),
+                  ),
                   16.h,
                   Center(
                     child: TextButton(

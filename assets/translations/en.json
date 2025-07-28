@@ -42,5 +42,9 @@
     "city": "City",
     "adrs": "Address",
     "chooseContry": "Choose your country",
-    "delete": "delete"
+    "delete": "delete",
+    "pintitle":"PIN-Code",
+    "pinsub":"Enter PIN code",
+    "errordialog":"You reached out maximum amount of attempts. Please, try later.",
+    "okay":"Okay"
 }

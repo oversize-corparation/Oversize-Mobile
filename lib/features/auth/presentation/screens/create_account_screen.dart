@@ -20,7 +20,7 @@ class CreateAccountScreen extends StatelessWidget {
             alignment: Alignment(1, -1),
             child: SvgPicture.asset(
               AppImages.bubbleCreate2,
-              color: AppColor.bubble2,
+              color: AppColor.deepPurple,
             ),
           ),
           SingleChildScrollView(

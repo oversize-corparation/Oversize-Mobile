@@ -42,5 +42,9 @@
     "city": "Shahar",
     "adrs": "Manzil",
     "chooseContry": "Mamlakatingizni tanlang",
-    "delete": "O'chirish"
+    "delete": "O'chirish",
+    "pintitle":"PIN-kod",
+    "pinsub":"PIN kodni kiriting",
+    "errordialog":"Siz maksimal urinishlar soniga erishdingiz. Iltimos, keyinroq urinib koʻring.",
+    "okay":"Xop"
 }

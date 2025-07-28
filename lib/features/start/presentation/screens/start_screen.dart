@@ -4,6 +4,7 @@ import 'package:oversize/config/widgets/button_widget.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/features/start/start.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -74,7 +75,7 @@ class StartScreen extends StatelessWidget {
                     ),
                   ),
                   16.w,
-                  GestureDetector(
+                  ZoomTapAnimation(
                     onTap: () {
                       context.pushNamed(AppRouter.login);
                     },
