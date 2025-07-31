@@ -213,17 +213,18 @@ class AppRouter {
                   return ProfileScreen();
                 },
               ),
+              GoRoute(
+                path: AppRouter.settings,
+                name: AppRouter.settings,
+                builder: (context, state) {
+                  return SettingScreen();
+                },
+              ),
             ],
           ),
         ],
       ),
-      GoRoute(
-        path: AppRouter.settings,
-        name: AppRouter.settings,
-        builder: (context, state) {
-          return SettingScreen();
-        },
-      ),
+
       GoRoute(
         path: AppRouter.language,
         name: AppRouter.language,
