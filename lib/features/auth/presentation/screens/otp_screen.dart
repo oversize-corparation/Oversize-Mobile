@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/auth/presentation/widgets/otp_widget.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
