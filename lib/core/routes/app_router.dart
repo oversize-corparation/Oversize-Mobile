@@ -220,45 +220,44 @@ class AppRouter {
                   return SettingScreen();
                 },
               ),
+              GoRoute(
+                path: AppRouter.language,
+                name: AppRouter.language,
+                builder: (context, state) {
+                  return LanguageScreen();
+                },
+              ),
+              GoRoute(
+                path: AppRouter.currency,
+                name: AppRouter.currency,
+                builder: (context, state) {
+                  return CurrencyScreen();
+                },
+              ),
+              GoRoute(
+                path: AppRouter.size,
+                name: AppRouter.size,
+                builder: (context, state) {
+                  return SizesScreen();
+                },
+              ),
+              GoRoute(
+                path: AppRouter.editProfile,
+                name: AppRouter.editProfile,
+                builder: (context, state) {
+                  return EditProfile();
+                },
+              ),
+              GoRoute(
+                path: AppRouter.shippingAdres,
+                name: AppRouter.shippingAdres,
+                builder: (context, state) {
+                  return ShippingAdres();
+                },
+              ),
             ],
           ),
         ],
-      ),
-
-      GoRoute(
-        path: AppRouter.language,
-        name: AppRouter.language,
-        builder: (context, state) {
-          return LanguageScreen();
-        },
-      ),
-      GoRoute(
-        path: AppRouter.currency,
-        name: AppRouter.currency,
-        builder: (context, state) {
-          return CurrencyScreen();
-        },
-      ),
-      GoRoute(
-        path: AppRouter.size,
-        name: AppRouter.size,
-        builder: (context, state) {
-          return SizesScreen();
-        },
-      ),
-      GoRoute(
-        path: AppRouter.editProfile,
-        name: AppRouter.editProfile,
-        builder: (context, state) {
-          return EditProfile();
-        },
-      ),
-      GoRoute(
-        path: AppRouter.shippingAdres,
-        name: AppRouter.shippingAdres,
-        builder: (context, state) {
-          return ShippingAdres();
-        },
       ),
     ],
   );

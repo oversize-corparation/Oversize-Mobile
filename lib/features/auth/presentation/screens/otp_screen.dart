@@ -29,44 +29,6 @@ class _OtpScreenState extends State<OtpScreen> {
     super.dispose();
   }
 
-  void _showDialog() {
-    AwesomeDialog(
-      context: context,
-      dialogType: DialogType.warning,
-      animType: AnimType.topSlide,
-      title: 'errordialog'.tr(),
-      btnOkText: 'okay'.tr(),
-      buttonsTextStyle: GoogleFonts.nunitoSans(
-        fontSize: 20,
-        fontWeight: FontWeight.w300,
-        color: AppColor.white,
-      ),
-      customHeader: Container(
-        width: 70,
-        height: 70,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Color(0xffFFEBEB),
-        ),
-        child: Icon(Icons.error_rounded, color: Color(0xffF1AEAE), size: 28),
-      ),
-      btnOkOnPress: () {},
-      headerAnimationLoop: false,
-      btnOkColor: AppColor.deepBlack,
-      dialogBorderRadius: BorderRadius.circular(19),
-      bodyHeaderDistance: 2,
-      dialogBackgroundColor: Colors.white,
-      padding: EdgeInsets.only(left: 53, bottom: 20, right: 53),
-      buttonsBorderRadius: BorderRadius.circular(16),
-      titleTextStyle: GoogleFonts.raleway(
-        fontWeight: FontWeight.w400,
-        color: AppColor.deepBlack,
-        fontSize: 18,
-        letterSpacing: -0.18,
-      ),
-    ).show();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,8 +117,97 @@ class _OtpScreenState extends State<OtpScreen> {
                   OtpWidget(focusNode: _otpFocusNode),
                   Spacer(flex: 5),
                   ButtonWidget(
-                    onPressed: _showDialog, // Show dialog when clicked
-                    text: 'send'.tr(),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) {
+                          return Dialog(
+                            backgroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(19),
+                            ),
+                            child: Stack(
+                              clipBehavior: Clip.none,
+                              alignment: Alignment.topCenter,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    24,
+                                    60,
+                                    24,
+                                    24,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        'errordialog'.tr(),
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.raleway(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColor.deepBlack,
+                                        ),
+                                      ),
+                                      SizedBox(height: 20),
+                                      ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          fixedSize: Size(200, 50),
+                                          foregroundColor: Colors.white,
+                                          backgroundColor: AppColor.deepBlack,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              16,
+                                            ),
+                                          ),
+                                        ),
+                                        onPressed: () => Navigator.pop(context),
+                                        child: Text('okay'.tr()),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned(
+                                  top: -35,
+                                  child: Container(
+                                    width: 80,
+                                    height: 80,
+                                    padding: EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppColor.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: AppColor.boxShadow,
+                                          offset: Offset(0, 3),
+                                          blurRadius: 8,
+                                          spreadRadius: 0,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Container(
+                                      width: 50,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xffFFEBEB),
+                                      ),
+                                      child: Icon(
+                                        Icons.error_rounded,
+                                        color: Color(0xffF1AEAE),
+                                        size: 28,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    }, // Show dialog when clicked
+                    text: 'next'.tr(),
                   ),
                   16.h,
                   Center(

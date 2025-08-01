@@ -46,5 +46,7 @@
     "pintitle":"PIN-kod",
     "pinsub":"PIN kodni kiriting",
     "errordialog":"Siz maksimal urinishlar soniga erishdingiz. Iltimos, keyinroq urinib koʻring.",
-    "okay":"Xop"
+    "okay":"Xop",
+    "firstname":"Ism",
+    "lastname":"Familiya"
 }

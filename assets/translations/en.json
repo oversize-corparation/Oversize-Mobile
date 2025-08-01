@@ -46,5 +46,8 @@
     "pintitle":"PIN-Code",
     "pinsub":"Enter PIN code",
     "errordialog":"You reached out maximum amount of attempts. Please, try later.",
-    "okay":"Okay"
+    "okay":"Okay",
+    "firstname":"First name",
+    "lastname":"Last name"
+
 }

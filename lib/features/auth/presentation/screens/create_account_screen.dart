@@ -3,7 +3,6 @@ import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
-import 'package:oversize/features/auth/presentation/widgets/imagepicker_widget.dart';
 import 'package:oversize/features/auth/presentation/widgets/phonefield_widget.dart';
 
 class CreateAccountScreen extends StatelessWidget {
@@ -39,13 +38,10 @@ class CreateAccountScreen extends StatelessWidget {
                       letterSpacing: -0.5,
                     ),
                   ),
-                  40.h,
 
-                  // Avatar upload icon
-                  ImagePickerWidget(),
-
-                  32.h,
-
+                  80.h, TextfieldWidget(hint: 'firstname'.tr()),
+                  8.h,
+                  TextfieldWidget(hint: 'lastname'.tr()), 8.h,
                   // Email
                   TextfieldWidget(hint: 'email'.tr()),
                   8.h,
