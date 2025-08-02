@@ -57,7 +57,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   onTap: _showCountryPicker,
                   child: CircleAvatar(
                     radius: 20,
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColor.deepPurple,
                     child: Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.white,
@@ -111,7 +111,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColor.deepPurple,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),

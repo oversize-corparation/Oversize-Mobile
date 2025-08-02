@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:oversize/core/constants/app_styles.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 
 class ProfileListTile extends StatelessWidget {
@@ -19,7 +19,13 @@ class ProfileListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: ontap,
-      leading: Text(title.tr(), style: AppStyle.w600s15h20DarkBluePrimary),
+      leading: Text(
+        title.tr(),
+        style: GoogleFonts.nunitoSans(
+          fontWeight: FontWeight.w600,
+          fontSize: 16,
+        ),
+      ),
       trailing: label != null
           ? Row(
               mainAxisSize: MainAxisSize.min,

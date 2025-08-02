@@ -19,17 +19,23 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           ProfileButton(
             ontap: () {},
-            icon: SvgPicture.asset(AppImages.vaucher),
+            icon: SvgPicture.asset(
+              AppImages.vaucher,
+              color: AppColor.deepPurple,
+            ),
             color: AppColor.circleBlur,
           ),
           10.w,
           Badge(
             smallSize: 13,
             largeSize: 60,
-            backgroundColor: AppColor.darkBlue,
+            backgroundColor: AppColor.deepPurple,
             child: ProfileButton(
               ontap: () {},
-              icon: SvgPicture.asset(AppImages.menu),
+              icon: SvgPicture.asset(
+                AppImages.menu,
+                color: AppColor.deepPurple,
+              ),
               color: AppColor.circleBlur,
             ),
           ),
@@ -38,7 +44,10 @@ class ProfileScreen extends StatelessWidget {
             ontap: () {
               context.push(AppRouter.settings);
             },
-            icon: SvgPicture.asset(AppImages.settings),
+            icon: SvgPicture.asset(
+              AppImages.settings,
+              color: AppColor.deepPurple,
+            ),
             color: AppColor.circleBlur,
           ),
         ],

@@ -34,10 +34,9 @@ class _MainScreenState extends State<MainScreen> {
                 icon: SvgPicture.asset(
                   AppImages.home,
                   height: 24,
-                  color:
-                      MainSources.currentPage.value == 0
-                          ? AppColor.darkBlue
-                          : Colors.black,
+                  color: MainSources.currentPage.value == 0
+                      ? AppColor.deepBlack
+                      : AppColor.deepPurple,
                 ),
                 label: "",
               ),
@@ -45,10 +44,9 @@ class _MainScreenState extends State<MainScreen> {
                 icon: SvgPicture.asset(
                   AppImages.favourite,
                   height: 24,
-                  color:
-                      MainSources.currentPage.value == 1
-                          ? AppColor.darkBlue
-                          : Colors.black,
+                  color: MainSources.currentPage.value == 1
+                      ? AppColor.deepBlack
+                      : AppColor.deepPurple,
                 ),
                 label: "",
               ),
@@ -56,10 +54,9 @@ class _MainScreenState extends State<MainScreen> {
                 icon: SvgPicture.asset(
                   AppImages.category,
                   height: 24,
-                  color:
-                      MainSources.currentPage.value == 2
-                          ? AppColor.darkBlue
-                          : Colors.black,
+                  color: MainSources.currentPage.value == 2
+                      ? AppColor.deepBlack
+                      : AppColor.deepPurple,
                 ),
                 label: "",
               ),
@@ -67,10 +64,9 @@ class _MainScreenState extends State<MainScreen> {
                 icon: SvgPicture.asset(
                   AppImages.card,
                   height: 24,
-                  color:
-                      MainSources.currentPage.value == 3
-                          ? AppColor.darkBlue
-                          : Colors.black,
+                  color: MainSources.currentPage.value == 3
+                      ? AppColor.deepBlack
+                      : AppColor.deepPurple,
                 ),
                 label: "",
               ),
@@ -78,10 +74,9 @@ class _MainScreenState extends State<MainScreen> {
                 icon: SvgPicture.asset(
                   AppImages.profile,
                   height: 24,
-                  color:
-                      MainSources.currentPage.value == 4
-                          ? AppColor.darkBlue
-                          : Colors.black,
+                  color: MainSources.currentPage.value == 4
+                      ? AppColor.deepBlack
+                      : AppColor.deepPurple,
                 ),
                 label: "",
               ),

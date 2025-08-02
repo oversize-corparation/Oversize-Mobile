@@ -6,9 +6,9 @@ class AppColor {
   AppColor();
   static const Color darkBlue = Color(0xFF004CFF);
   static const Color lightBlue = Color(0xFFF1F4FE);
-  // static const Color lightGray500 = Color(0xFFD0D8E5);
+  static const Color circlePink = Color(0xFFF8CECE);
   static const Color lightGray400 = Color(0xFFE3E8F0);
-  // static const Color lightGreen = Color(0xFF6EC207);
+  static const Color profileLitTile = Color(0xFFF9F9F9);
   // static const Color lightGray600 = Color(0xFFB8C2D1);
   static const Color primaryDark = Color(0xFF2C3955);
   // static const Color homeCategoryItem = Color(0xFFF7F7F7);
@@ -26,6 +26,6 @@ class AppColor {
   static const Color hintColor = Color(0xffD2D2D2);
   static const Color dropIcon = Color(0xff1F1F1F);
   static const Color deepBlack = Color(0xff000000);
-  static const Color circleBlur = Color(0xFFE5EBFC);
+  static const Color circleBlur = Color(0xFFF8F8F8);
   static const Color error = Color(0xffFF0000);
 }

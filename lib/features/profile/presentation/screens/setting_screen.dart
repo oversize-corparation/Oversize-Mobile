@@ -11,7 +11,6 @@ class SettingScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
         title: Text("settings".tr()),
         centerTitle: true,
       ),
