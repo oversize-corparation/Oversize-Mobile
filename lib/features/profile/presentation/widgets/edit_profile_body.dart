@@ -50,7 +50,7 @@ class _EditProfileBodyState extends State<EditProfileBody> {
                       _pickImage();
                     },
                     icon: Icon(Icons.edit, color: Colors.white),
-                    color: AppColor.darkBlue,
+                    color: AppColor.deepPurple,
                     radius: 20,
                   ),
                 ),
@@ -73,7 +73,7 @@ class _EditProfileBodyState extends State<EditProfileBody> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColor.darkBlue,
+                  backgroundColor: AppColor.deepPurple,
                 ),
                 onPressed: () {},
                 child: Text(

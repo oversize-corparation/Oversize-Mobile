@@ -1,10 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:go_router/go_router.dart';
 import 'package:oversize/config/widgets/button_widget.dart';
-import 'package:oversize/core/extension/space_extension.dart';
-import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/features/app/app_export.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});

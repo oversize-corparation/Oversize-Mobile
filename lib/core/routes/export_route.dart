@@ -15,4 +15,5 @@ export 'package:oversize/features/profile/presentation/screens/currency_screen.d
 export 'package:oversize/features/profile/presentation/screens/edit_profile.dart';
 export 'package:oversize/features/profile/presentation/screens/language_screen.dart';
 export 'package:oversize/features/profile/presentation/screens/setting_screen.dart';
-export 'package:oversize/features/profile/presentation/screens/sizes_screen.dart';
+export 'package:oversize/features/profile/presentation/screens/shipping_adres.dart';
+export 'package:oversize/features/app/splash_screen.dart';

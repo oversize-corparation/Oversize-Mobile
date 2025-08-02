@@ -1,6 +1,4 @@
 import 'package:oversize/core/routes/export_route.dart';
-import 'package:oversize/features/profile/presentation/screens/shipping_adres.dart';
-import 'package:oversize/features/app/splash_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -15,7 +13,6 @@ class AppRouter {
   static String settings = '/settings';
   static String language = '/language';
   static String currency = '/currency';
-  static String size = '/size';
   static String splash = '/splash';
   static String pinSetup = '/pinSetup';
   static String pinApp = '/pinApp';
@@ -23,8 +20,8 @@ class AppRouter {
   static String shippingAdres = '/shippingAdres';
 
   static GoRouter router = GoRouter(
-    initialLocation: start,
-    // initialLocation: profile,
+    // initialLocation: start,
+    initialLocation: profile,
     routes: [
       GoRoute(
         path: AppRouter.start,
@@ -234,13 +231,7 @@ class AppRouter {
                   return CurrencyScreen();
                 },
               ),
-              GoRoute(
-                path: AppRouter.size,
-                name: AppRouter.size,
-                builder: (context, state) {
-                  return SizesScreen();
-                },
-              ),
+
               GoRoute(
                 path: AppRouter.editProfile,
                 name: AppRouter.editProfile,

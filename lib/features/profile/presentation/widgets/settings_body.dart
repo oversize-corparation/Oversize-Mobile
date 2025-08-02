@@ -1,6 +1,8 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:oversize/core/constants/app_styles.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:oversize/core/extension/space_extension.dart';
+
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_list_tile.dart';
@@ -22,47 +24,70 @@ class _SettingsBodyState extends State<SettingsBody> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text("personal".tr(), style: AppStyle.w800s17h22Dark),
+          child: Text(
+            "personal".tr(),
+            style: GoogleFonts.raleway(
+              fontWeight: FontWeight.w800,
+              fontSize: 20,
+            ),
+          ),
         ),
+        30.h,
         ProfileListTile(
           ontap: () {
             context.push(AppRouter.editProfile);
           },
           title: "profile",
         ),
+        Divider(thickness: 0.5),
         ProfileListTile(
           ontap: () {
             context.push(AppRouter.shippingAdres);
           },
           title: "address",
         ),
+        Divider(thickness: 0.5),
         ProfileListTile(ontap: () {}, title: "payment"),
+        Divider(thickness: 0.5),
+        30.h,
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text("shop".tr(), style: AppStyle.w800s17h22Dark),
+          child: Text(
+            "shop".tr(),
+            style: GoogleFonts.raleway(
+              fontWeight: FontWeight.w800,
+              fontSize: 20,
+            ),
+          ),
         ),
+        30.h,
         ProfileListTile(
           ontap: _showCountryPicker,
           title: "country",
           label: _selectedCountry?.name,
         ),
+        Divider(thickness: 0.5),
         ProfileListTile(
           ontap: () {
             context.push(AppRouter.currency);
           },
           title: "currency",
         ),
-        ProfileListTile(
-          ontap: () {
-            context.push(AppRouter.size);
-          },
-          title: "sizes",
-        ),
+        Divider(thickness: 0.5),
         ProfileListTile(ontap: () {}, title: "terms"),
+        Divider(thickness: 0.5),
+        30.h,
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text("account".tr(), style: AppStyle.w800s17h22Dark),
+          child: Text(
+            "account".tr(),
+            style: GoogleFonts.raleway(
+              fontWeight: FontWeight.w800,
+              fontSize: 20,
+            ),
+          ),
         ),
+        30.h,
         ProfileListTile(
           ontap: () {
             context.push(AppRouter.language);
@@ -70,7 +95,8 @@ class _SettingsBodyState extends State<SettingsBody> {
           title: "language",
           label: language(),
         ),
-        // ProfileListTile(ontap: () {}, title: "About Slada"),
+        Divider(thickness: 0.5),
+        40.h,
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ZoomTapAnimation(
@@ -103,10 +129,16 @@ class _SettingsBodyState extends State<SettingsBody> {
             },
             child: Text(
               "logout".tr(),
-              style: TextStyle(color: Colors.red, fontSize: 13),
+              style: GoogleFonts.raleway(
+                fontWeight: FontWeight.w600,
+                fontSize: 13,
+                color: Colors.red,
+              ),
             ),
           ),
         ),
+
+        40.h,
       ],
     );
   }
