@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:oversize/core/constants/app_colors.dart';
-import 'package:oversize/core/constants/app_images.dart';
-import 'package:oversize/core/extension/space_extension.dart';
-import 'package:oversize/core/routes/app_router.dart';
-import 'package:oversize/core/services/local_storage.dart';
-import 'package:vibration/vibration.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
-
+import 'package:oversize/features/app/app_export.dart';
 class PinSetupScreen extends StatefulWidget {
   const PinSetupScreen({super.key});
 

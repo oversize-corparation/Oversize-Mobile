@@ -2,7 +2,7 @@ import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_text_field.dart';
-import 'package:oversize/features/start/start.dart';
+import 'package:oversize/features/app/app_export.dart';
 
 class ShippingAddressBody extends StatefulWidget {
   const ShippingAddressBody({super.key});

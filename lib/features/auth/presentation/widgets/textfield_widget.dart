@@ -7,8 +7,9 @@ class TextfieldWidget extends StatefulWidget {
     required this.hint,
     this.isPassword = false,
     this.color,
+    required this.controller,
   });
-
+  final TextEditingController? controller;
   final String hint;
   final bool isPassword;
   final Color? color;
@@ -29,6 +30,7 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       obscureText: widget.isPassword ? _obscureText : false,
       decoration: InputDecoration(
         hintText: widget.hint,

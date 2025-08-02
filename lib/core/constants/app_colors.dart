@@ -1,4 +1,4 @@
-import 'package:oversize/features/start/start.dart';
+import 'package:oversize/features/app/app_export.dart';
 
 AppColor appColor = AppColor();
 

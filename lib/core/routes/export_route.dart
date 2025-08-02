@@ -8,7 +8,7 @@ export 'package:oversize/features/favourite/presentation/screens/favourite_scree
 export 'package:oversize/features/home/presentation/screens/home_screen.dart';
 export 'package:oversize/features/main/main_screen.dart';
 export 'package:oversize/features/profile/presentation/screens/profile_screen.dart';
-export 'package:oversize/features/start/presentation/screens/start_screen.dart';
+export 'package:oversize/features/app/start_screen.dart';
 export 'package:oversize/features/app/pin_setup_screen.dart';
 export 'package:oversize/features/auth/presentation/screens/otp_screen.dart';
 export 'package:oversize/features/profile/presentation/screens/currency_screen.dart';

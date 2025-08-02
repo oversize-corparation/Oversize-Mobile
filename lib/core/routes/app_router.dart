@@ -1,6 +1,6 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/profile/presentation/screens/shipping_adres.dart';
-import 'package:oversize/features/splash/splash_screen.dart';
+import 'package:oversize/features/app/splash_screen.dart';
 
 class AppRouter {
   static String home = "/home";

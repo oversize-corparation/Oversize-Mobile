@@ -5,9 +5,18 @@ import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/auth/presentation/widgets/phonefield_widget.dart';
 
-class CreateAccountScreen extends StatelessWidget {
+class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
 
+  @override
+  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+}
+
+class _CreateAccountScreenState extends State<CreateAccountScreen> {
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,14 +48,29 @@ class CreateAccountScreen extends StatelessWidget {
                     ),
                   ),
 
-                  80.h, TextfieldWidget(hint: 'firstname'.tr()),
+                  80.h,
+                  TextfieldWidget(
+                    hint: 'firstname'.tr(),
+                    controller: firstNameController,
+                  ),
                   8.h,
-                  TextfieldWidget(hint: 'lastname'.tr()), 8.h,
+                  TextfieldWidget(
+                    hint: 'lastname'.tr(),
+                    controller: lastNameController,
+                  ),
+                  8.h,
                   // Email
-                  TextfieldWidget(hint: 'email'.tr()),
+                  TextfieldWidget(
+                    hint: 'email'.tr(),
+                    controller: emailController,
+                  ),
                   8.h,
                   // Password
-                  TextfieldWidget(hint: 'password'.tr(), isPassword: true),
+                  TextfieldWidget(
+                    hint: 'password'.tr(),
+                    isPassword: true,
+                    controller: passwordController,
+                  ),
                   8.h,
 
                   // Phone number

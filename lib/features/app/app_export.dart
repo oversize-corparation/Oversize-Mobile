@@ -1,0 +1,11 @@
+export 'package:flutter/material.dart';
+export 'package:oversize/core/constants/app_colors.dart';
+export 'package:oversize/core/constants/app_images.dart';
+export 'package:google_fonts/google_fonts.dart';
+export 'package:flutter_svg/svg.dart';
+export 'package:go_router/go_router.dart';
+export 'package:oversize/core/extension/space_extension.dart';
+export 'package:oversize/core/routes/app_router.dart';
+export 'package:oversize/core/services/local_storage.dart';
+export 'package:vibration/vibration.dart';
+export 'package:zoom_tap_animation/zoom_tap_animation.dart';
