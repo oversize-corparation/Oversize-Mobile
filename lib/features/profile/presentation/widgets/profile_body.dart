@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:oversize/features/app/app_export.dart';
@@ -18,18 +20,20 @@ class ProfileBody extends StatelessWidget {
             builder: (context, constraints) {
               final isCompact = constraints.maxHeight < 140;
               return FlexibleSpaceBar(
+                titlePadding: EdgeInsets.only(left: 16, bottom: 16),
                 centerTitle: !isCompact,
                 title: SafeArea(
                   top: true,
                   bottom: false,
                   child: AnimatedSwitcher(
+                    switchInCurve: Curves.bounceOut,
+                    switchOutCurve: Curves.bounceInOut,
                     duration: const Duration(milliseconds: 500),
                     child: isCompact
                         ? Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               CircleAvatar(
-                                radius: 30,
+                                radius: 25,
                                 child: Icon(Icons.person),
                               ),
                               SizedBox(width: 12),
@@ -65,6 +69,7 @@ class ProfileBody extends StatelessWidget {
             },
           ),
         ),
+
         SliverList(
           delegate: SliverChildBuilderDelegate((context, index) {
             return Padding(
