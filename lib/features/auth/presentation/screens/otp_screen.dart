@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/auth/presentation/widgets/otp_widget.dart';
 
@@ -29,6 +28,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final email = GoRouterState.of(context).extra as String;
     return Scaffold(
       backgroundColor: AppColor.white,
       body: Stack(
@@ -103,7 +103,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   13.h,
                   Text(
                     textAlign: TextAlign.center,
-                    '+33*****99',
+                    '$email',
                     style: GoogleFonts.nunitoSans(
                       color: AppColor.deepBlack,
                       fontSize: 16,

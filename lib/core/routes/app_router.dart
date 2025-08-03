@@ -20,8 +20,8 @@ class AppRouter {
   static String shippingAdres = '/shippingAdres';
 
   static GoRouter router = GoRouter(
-    // initialLocation: start,
-    initialLocation: profile,
+    initialLocation: start,
+    // initialLocation: profile,
     routes: [
       GoRoute(
         path: AppRouter.start,

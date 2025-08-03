@@ -3,6 +3,7 @@ import 'package:oversize/core/api/dio_client.dart';
 import 'package:oversize/features/auth/data/datasource/auth_remote_data_source.dart';
 import 'package:oversize/features/auth/data/repository/auth_repository_impl.dart';
 import 'package:oversize/features/auth/domain/repository/auth_repository.dart';
+import 'package:oversize/features/auth/domain/usecase/create_account_usecase.dart';
 import 'package:oversize/features/auth/domain/usecase/login_usecase.dart';
 import 'package:oversize/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -25,7 +26,7 @@ void _styles() {}
 
 void _dataSources() {
   sl.registerLazySingleton<AuthRemoteDataSource>(
-    () => AuthRemoteDataSourceImpl(dio: sl()),
+    () => AuthRemoteDataSourceImpl(dioClient: sl()),
   );
 }
 
@@ -35,23 +36,10 @@ void _repositories() {
 
 void _useCase() {
   sl.registerLazySingleton(() => LoginUseCase(sl()));
+
+  sl.registerLazySingleton(() => CreateAccountUsecase(sl()));
 }
 
 void _blocs() {
-  sl.registerFactory(() => AuthBloc(sl()));
+  sl.registerFactory(() => AuthBloc(sl(), sl()));
 }
-  // Bloc
-
-  // // UseCases
-
-  // // Repositories
-
-  // // DataSources
-
-
-  // // External
-  // sl.registerLazySingleton(
-  //   () =>
-  //       Dio(BaseOptions(baseUrl: 'https://oversize-backend-fe9t.onrender.com')),
-  // );
-

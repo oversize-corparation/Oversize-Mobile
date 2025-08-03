@@ -3,12 +3,13 @@ import 'package:oversize/core/constants/app_colors.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpWidget extends StatelessWidget {
-  const OtpWidget({super.key,required this.focusNode});
-final FocusNode? focusNode;
+  const OtpWidget({super.key, required this.focusNode});
+  final FocusNode? focusNode;
   @override
   Widget build(BuildContext context) {
-    return Pinput(focusNode: focusNode,
-      length: 4,
+    return Pinput(
+      focusNode: focusNode,
+      length: 6,
       defaultPinTheme: PinTheme(
         textStyle: const TextStyle(
           fontSize: 20,

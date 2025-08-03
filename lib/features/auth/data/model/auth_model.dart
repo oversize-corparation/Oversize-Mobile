@@ -1,14 +1,14 @@
-import 'package:oversize/features/auth/domain/entity/login_entity.dart';
+import 'package:oversize/features/auth/domain/entity/auth_entity.dart';
 
-class LoginResponseModel extends LoginResponseEntity {
-  LoginResponseModel({
+class AuthModel extends AuthEntity {
+  AuthModel({
     required String accessToken,
     required int status,
     required String message,
   }) : super(accessToken: accessToken, status: status, message: message);
 
-  factory LoginResponseModel.fromJson(Map<String, dynamic> json) {
-    return LoginResponseModel(
+  factory AuthModel.fromJson(Map<String, dynamic> json) {
+    return AuthModel(
       message: json['message'],
       status: json['status'],
       accessToken: json['accessToken'],

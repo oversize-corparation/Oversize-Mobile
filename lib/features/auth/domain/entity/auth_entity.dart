@@ -1,9 +1,9 @@
-class LoginResponseEntity {
+class AuthEntity {
   final String accessToken;
   final int status;
   final String message;
 
-  LoginResponseEntity({
+  AuthEntity({
     required this.accessToken,
     required this.status,
     required this.message,

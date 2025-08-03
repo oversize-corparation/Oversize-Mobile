@@ -2,11 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 
 class PhonefieldWidget extends StatelessWidget {
-  const PhonefieldWidget({super.key});
+  
+  const PhonefieldWidget({super.key,required this.controller});
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
-    return IntlPhoneField(
+    return IntlPhoneField(controller: controller ,
       disableLengthCheck: true,
       flagsButtonPadding: EdgeInsetsGeometry.only(left: 20),
       dropdownIconPosition: IconPosition.trailing,
