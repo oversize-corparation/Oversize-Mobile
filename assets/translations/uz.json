@@ -43,10 +43,15 @@
     "adrs": "Manzil",
     "chooseContry": "Mamlakatingizni tanlang",
     "delete": "O'chirish",
-    "pintitle":"PIN-kod",
-    "pinsub":"PIN kodni kiriting",
-    "errordialog":"Siz maksimal urinishlar soniga erishdingiz. Iltimos, keyinroq urinib koʻring.",
-    "okay":"Xop",
-    "firstname":"Ism",
-    "lastname":"Familiya"
+    "pintitle": "PIN-kod",
+    "pinsub": "PIN kodni kiriting",
+    "errordialog": "Siz maksimal urinishlar soniga erishdingiz. Iltimos, keyinroq urinib koʻring.",
+    "okay": "Xop",
+    "firstname": "Ism",
+    "order": "Buyurtmalarim",
+    "sharh": "Sharhlarim",
+    "caller": "Sotuvchi bo'lish",
+    "chat": "Chatlarim",
+    "connection": "Biz bilan bog'lanish",
+    "lastname": "Familiya"
 }

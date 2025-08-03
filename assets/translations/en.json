@@ -43,11 +43,15 @@
     "adrs": "Address",
     "chooseContry": "Choose your country",
     "delete": "delete",
-    "pintitle":"PIN-Code",
-    "pinsub":"Enter PIN code",
-    "errordialog":"You reached out maximum amount of attempts. Please, try later.",
-    "okay":"Okay",
-    "firstname":"First name",
-    "lastname":"Last name"
-
+    "pintitle": "PIN-Code",
+    "pinsub": "Enter PIN code",
+    "errordialog": "You reached out maximum amount of attempts. Please, try later.",
+    "okay": "Okay",
+    "order": "My orders",
+    "sharh": "My reviews",
+    "caller": "Become a seller",
+    "chat": "My chats",
+    "connection": "Contact us",
+    "firstname": "First name",
+    "lastname": "Last name"
 }

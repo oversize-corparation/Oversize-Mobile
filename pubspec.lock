@@ -97,6 +97,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  custom_animation_appbar:
+    dependency: "direct main"
+    description:
+      name: custom_animation_appbar
+      sha256: "189f0706019e9230bed059091d3ee6df741dbed2e96af923ae7b78e807c15a32"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   device_info_plus:
     dependency: transitive
     description:

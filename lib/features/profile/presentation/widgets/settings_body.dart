@@ -6,7 +6,6 @@ import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_list_tile.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class SettingsBody extends StatefulWidget {
   const SettingsBody({super.key});
@@ -95,49 +94,6 @@ class _SettingsBodyState extends State<SettingsBody> {
           title: "language",
           label: language(),
         ),
-        Divider(thickness: 0.5),
-        40.h,
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: ZoomTapAnimation(
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(
-                    "You are going to delete your account",
-                    textAlign: TextAlign.center,
-                  ),
-                  content: Text(
-                    "You won't be able to restore your data",
-                    textAlign: TextAlign.center,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text("cancel".tr()),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text("delete".tr()),
-                    ),
-                  ],
-                ),
-              );
-            },
-            child: Text(
-              "logout".tr(),
-              style: GoogleFonts.raleway(
-                fontWeight: FontWeight.w600,
-                fontSize: 13,
-                color: Colors.red,
-              ),
-            ),
-          ),
-        ),
-
         40.h,
       ],
     );
