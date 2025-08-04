@@ -9,4 +9,9 @@ abstract class AuthRepository {
     required String password,
     required String phone,
   });
+  Future<AuthEntity> otpVerify({
+    required String email,
+    required String code,
+    required bool restoration,
+  });
 }

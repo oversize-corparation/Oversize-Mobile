@@ -21,3 +21,14 @@ class CreateAccountRequested extends AuthEvent {
     required this.phone,
   });
 }
+class OtpVerifyRequested extends AuthEvent {
+  final String email;
+  final String code;
+  final bool restoration;
+
+  OtpVerifyRequested({
+    required this.email,
+    required this.code,
+    required this.restoration,
+  });
+}

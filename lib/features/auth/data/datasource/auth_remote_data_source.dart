@@ -12,6 +12,11 @@ abstract class AuthRemoteDataSource {
     required String password,
     required String phone,
   });
+    Future<AuthEntity> otpVerify({
+    required String email,
+    required String code,
+    required bool restoration,
+  });
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -74,9 +79,41 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       );
 
       if (response.statusCode == 200) {
-        return response.data;
+        return AuthModel.fromJson(response.data);
       } else {
         throw Exception(response.data['detail'] ?? 'Account creation failed');
+      }
+    } on DioException catch (e) {
+      if (e.response != null) {
+        final message =
+            e.response?.data['detail'] ??
+            e.response?.data['message'] ??
+            'Server error: ${e.response?.statusCode}';
+        throw Exception(message);
+      } else {
+        throw Exception('No Internet connection or server not responding');
+      }
+    } catch (e) {
+      throw Exception('Unexpected error occurred: $e');
+    }
+  }
+  @override
+  Future<AuthEntity> otpVerify({
+    required String email,
+    required String code,
+    required bool restoration,
+  }) async {
+    try {
+      final response = await dioClient.dioClient.post(
+        '/api/auth/verify-otp',
+        options: Options(contentType: Headers.formUrlEncodedContentType),
+        data: {'email': email, 'code': code, 'restoration': restoration},
+      );
+
+      if (response.statusCode == 200) {
+        return AuthModel.fromJson(response.data);
+      } else {
+        throw Exception(response.data['detail'] ?? 'OTP verification failed');
       }
     } on DioException catch (e) {
       if (e.response != null) {

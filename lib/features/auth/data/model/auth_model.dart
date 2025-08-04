@@ -11,7 +11,7 @@ class AuthModel extends AuthEntity {
     return AuthModel(
       message: json['message'],
       status: json['status'],
-      accessToken: json['accessToken'],
+      accessToken: json['accessToken'] ?? '',
     );
   }
 

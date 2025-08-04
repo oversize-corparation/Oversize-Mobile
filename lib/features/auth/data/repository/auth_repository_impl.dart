@@ -27,4 +27,8 @@ class AuthRepositoryImpl implements AuthRepository {
       phone: phone,
     );
   }
+    @override
+  Future<AuthEntity> otpVerify({required String email, required String code, required bool restoration  }) {
+    return remoteDataSource.otpVerify(email: email, code: code, restoration: restoration);
+  }
 }

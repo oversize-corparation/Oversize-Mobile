@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
         listener: (context, state) {
           if (state is AuthSuccess) {
             // login muvaffaqiyatli bo‘ldi
-            context.pushNamed(AppRouter.pinSetup);
+            context.pushReplacementNamed(AppRouter.home);
           } else if (state is AuthFailure) {
             ScaffoldMessenger.of(
               context,

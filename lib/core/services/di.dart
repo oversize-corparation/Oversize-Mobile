@@ -5,6 +5,7 @@ import 'package:oversize/features/auth/data/repository/auth_repository_impl.dart
 import 'package:oversize/features/auth/domain/repository/auth_repository.dart';
 import 'package:oversize/features/auth/domain/usecase/create_account_usecase.dart';
 import 'package:oversize/features/auth/domain/usecase/login_usecase.dart';
+import 'package:oversize/features/auth/domain/usecase/otp_verify_usecase.dart';
 import 'package:oversize/features/auth/presentation/bloc/auth_bloc.dart';
 
 final sl = GetIt.instance;
@@ -36,10 +37,10 @@ void _repositories() {
 
 void _useCase() {
   sl.registerLazySingleton(() => LoginUseCase(sl()));
-
+  sl.registerLazySingleton(() => OtpVerifyUsecase(sl()));
   sl.registerLazySingleton(() => CreateAccountUsecase(sl()));
 }
 
 void _blocs() {
-  sl.registerFactory(() => AuthBloc(sl(), sl()));
+  sl.registerFactory(() => AuthBloc(sl(), sl(), sl()));
 }
