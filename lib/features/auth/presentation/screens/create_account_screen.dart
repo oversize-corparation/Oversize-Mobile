@@ -90,29 +90,27 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       32.h,
 
                       // Done button
-                      state is AuthLoading
-                          ? Center(child: CircularProgressIndicator())
-                          : ButtonWidget(
-                              onPressed: () {
-                                final email = emailController.text.trim();
-                                final password = passwordController.text.trim();
-                                final firstName = firstNameController.text
-                                    .trim();
-                                final lastName = lastNameController.text.trim();
-                                final phone = phoneController.text.trim();
+                      ButtonWidget(
+                        isLoading: state is AuthLoading,
+                        onPressed: () {
+                          final email = emailController.text.trim();
+                          final password = passwordController.text.trim();
+                          final firstName = firstNameController.text.trim();
+                          final lastName = lastNameController.text.trim();
+                          final phone = phoneController.text.trim();
 
-                                context.read<AuthBloc>().add(
-                                  CreateAccountRequested(
-                                    firstName: firstName,
-                                    lastName: lastName,
-                                    email: email,
-                                    password: password,
-                                    phone: phone,
-                                  ),
-                                );
-                              },
-                              text: 'next'.tr(),
+                          context.read<AuthBloc>().add(
+                            CreateAccountRequested(
+                              firstName: firstName,
+                              lastName: lastName,
+                              email: email,
+                              password: password,
+                              phone: phone,
                             ),
+                          );
+                        },
+                        text: 'next'.tr(),
+                      ),
                       16.h,
 
                       // Cancel

@@ -29,7 +29,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         options: Options(contentType: Headers.formUrlEncodedContentType),
         data: {'email': email, 'password': password},
       );
-
+      print('Response: ${response.data}');
       if (response.statusCode == 200) {
         return AuthModel.fromJson(response.data);
       } else {
@@ -73,8 +73,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         },
       );
 
-      if (response.statusCode == 201) {
-        return AuthModel.fromJson(response.data);
+      if (response.statusCode == 200) {
+        return response.data;
       } else {
         throw Exception(response.data['detail'] ?? 'Account creation failed');
       }

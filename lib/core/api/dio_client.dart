@@ -5,7 +5,7 @@ import 'package:oversize/core/status_model/status_model.dart';
 import 'package:oversize/core/utils/utils.dart';
 
 class DioClient {
-  final String baseUrl = "https://oversize-backend-fe9t.onrender.com";
+  final String baseUrl = "https://oversize.onrender.com";
 
   late final Dio dioClient;
 

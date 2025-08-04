@@ -1,12 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:oversize/core/extension/space_extension.dart';
-import 'package:oversize/core/routes/app_router.dart';
-import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
-import 'package:oversize/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:oversize/features/auth/presentation/bloc/auth_event.dart';
-import 'package:oversize/features/auth/presentation/bloc/auth_state.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -100,22 +93,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     32.h,
 
                     // Done button
-                    state is AuthLoading
-                        ? Center(child: CircularProgressIndicator())
-                        : ButtonWidget(
-                            onPressed: () {
-                              final email = emailController.text.trim();
-                              final password = passwordController.text.trim();
-
-                              context.read<AuthBloc>().add(
-                                LoginRequested(
-                                  email: email,
-                                  password: password,
-                                ),
-                              );
-                            },
-                            text: 'next'.tr(),
-                          ),
+                    ButtonWidget(
+                      isLoading: state is AuthLoading,
+                      onPressed: () {
+                        final email = emailController.text.trim();
+                        final password = passwordController.text.trim();
+                        context.read<AuthBloc>().add(
+                          LoginRequested(email: email, password: password),
+                        );
+                      },
+                      text: 'next'.tr(),
+                    ),
                     16.h,
 
                     // Cancel

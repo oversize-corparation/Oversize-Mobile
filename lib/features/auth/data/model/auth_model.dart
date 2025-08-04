@@ -2,10 +2,10 @@ import 'package:oversize/features/auth/domain/entity/auth_entity.dart';
 
 class AuthModel extends AuthEntity {
   AuthModel({
-    required String accessToken,
-    required int status,
-    required String message,
-  }) : super(accessToken: accessToken, status: status, message: message);
+    required super.accessToken,
+    required super.status,
+    required super.message,
+  });
 
   factory AuthModel.fromJson(Map<String, dynamic> json) {
     return AuthModel(
@@ -16,6 +16,6 @@ class AuthModel extends AuthEntity {
   }
 
   Map<String, dynamic> toJson() {
-    return {'message': message, 'status': status, 'access': accessToken};
+    return {'message': message, 'status': status, 'accessToken': accessToken};
   }
 }
