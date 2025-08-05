@@ -8,6 +8,7 @@ class AppColor {
   static const Color lightBlue = Color(0xFFF1F4FE);
   static const Color circlePink = Color(0xFFF8CECE);
   static const Color lightGray400 = Color(0xFFE3E8F0);
+  static const Color lightGray100 = Color(0xFFF7F9FC);
   static const Color profileLitTile = Color(0xFFF9F9F9);
   // static const Color lightGray600 = Color(0xFFB8C2D1);
   static const Color primaryDark = Color(0xFF2C3955);

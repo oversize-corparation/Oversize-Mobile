@@ -2,7 +2,10 @@ import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:oversize/core/routes/export_route.dart';
+import 'package:oversize/core/widgets/support_dialog.dart';
 import 'package:oversize/features/app/app_export.dart';
+import 'package:oversize/features/profile/presentation/screens/empty_order_screen.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_widget.dart';
 
 class ProfileBody extends StatelessWidget {
@@ -69,18 +72,27 @@ class ProfileBody extends StatelessWidget {
             },
           ),
         ),
-
         SliverList(
           delegate: SliverChildBuilderDelegate((context, index) {
             return Padding(
               padding: EdgeInsets.all(10),
               child: Column(
                 children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      // color: AppColor.fillColor,
+                      color: AppColor.deepPurple,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    height: 150,
+                    width: double.infinity,
+                  ),
+                  24.h,
                   ProfileWidget(
                     icon: Icon(
                       CupertinoIcons.bag,
                       color: AppColor.deepPurple,
-                      size: 30,
+                      size: 28,
                     ),
                     title: "order",
                     action: Icon(
@@ -88,13 +100,22 @@ class ProfileBody extends StatelessWidget {
                       size: 24,
                       color: AppColor.deepPurple,
                     ),
-                    ontap: () {},
+                    ontap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return EmptyOrderScreen();
+                          },
+                        ),
+                      );
+                    },
                   ),
                   ProfileWidget(
                     icon: Icon(
                       CupertinoIcons.chat_bubble_text,
                       color: AppColor.deepPurple,
-                      size: 30,
+                      size: 28,
                     ),
                     title: "sharh",
                     action: Icon(
@@ -108,7 +129,7 @@ class ProfileBody extends StatelessWidget {
                     icon: Icon(
                       Icons.store_outlined,
                       color: AppColor.deepPurple,
-                      size: 30,
+                      size: 28,
                     ),
                     title: "caller",
                     action: Icon(
@@ -122,7 +143,7 @@ class ProfileBody extends StatelessWidget {
                     icon: Icon(
                       CupertinoIcons.chat_bubble_2,
                       color: AppColor.deepPurple,
-                      size: 30,
+                      size: 28,
                     ),
                     title: "chat",
                     action: Icon(
@@ -136,7 +157,7 @@ class ProfileBody extends StatelessWidget {
                     icon: Icon(
                       Icons.email_outlined,
                       color: AppColor.deepPurple,
-                      size: 30,
+                      size: 28,
                     ),
                     title: "connection",
                     action: Icon(
@@ -144,13 +165,15 @@ class ProfileBody extends StatelessWidget {
                       size: 24,
                       color: AppColor.deepPurple,
                     ),
-                    ontap: () {},
+                    ontap: () {
+                      SupportDialog.show(context);
+                    },
                   ),
                   ProfileWidget(
                     icon: SvgPicture.asset(
                       AppImages.settings,
                       color: AppColor.deepPurple,
-                      width: 27,
+                      width: 28,
                     ),
                     title: "settings".tr(),
                     action: Icon(
@@ -166,7 +189,7 @@ class ProfileBody extends StatelessWidget {
                     icon: Icon(
                       Icons.logout,
                       color: AppColor.deepPurple,
-                      size: 30,
+                      size: 28,
                     ),
                     title: "logout".tr(),
                     action: Icon(

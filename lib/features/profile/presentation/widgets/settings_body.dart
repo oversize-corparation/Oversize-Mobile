@@ -1,10 +1,10 @@
-import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
+import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_list_tile.dart';
 
 class SettingsBody extends StatefulWidget {
@@ -15,8 +15,6 @@ class SettingsBody extends StatefulWidget {
 }
 
 class _SettingsBodyState extends State<SettingsBody> {
-  Country? _selectedCountry;
-
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -46,7 +44,14 @@ class _SettingsBodyState extends State<SettingsBody> {
           title: "address",
         ),
         Divider(thickness: 0.5),
-        ProfileListTile(ontap: () {}, title: "payment"),
+        ProfileListTile(
+          ontap: () {
+            Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => PaymentScreen()));
+          },
+          title: "payment",
+        ),
         Divider(thickness: 0.5),
         30.h,
         Padding(
@@ -60,11 +65,7 @@ class _SettingsBodyState extends State<SettingsBody> {
           ),
         ),
         30.h,
-        ProfileListTile(
-          ontap: _showCountryPicker,
-          title: "country",
-          label: _selectedCountry?.name,
-        ),
+        ProfileListTile(title: "country"),
         Divider(thickness: 0.5),
         ProfileListTile(
           ontap: () {
@@ -110,25 +111,5 @@ class _SettingsBodyState extends State<SettingsBody> {
     } else {
       return "O'z";
     }
-  }
-
-  void _showCountryPicker() {
-    showCountryPicker(
-      context: context,
-      showPhoneCode: false,
-      onSelect: (Country country) {
-        setState(() {
-          _selectedCountry = country;
-        });
-      },
-      countryListTheme: CountryListThemeData(
-        borderRadius: BorderRadius.circular(10),
-        inputDecoration: InputDecoration(
-          labelText: 'searchCountry'.tr(),
-          hintText: 'searching'.tr(),
-          border: OutlineInputBorder(),
-        ),
-      ),
-    );
   }
 }

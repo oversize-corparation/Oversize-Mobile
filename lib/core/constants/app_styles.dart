@@ -15,6 +15,23 @@ class AppStyle {
     height: 22 / 17,
     color: AppColor.cancel,
   );
+  static TextStyle w600s18h22DarkBluePrimary = GoogleFonts.roboto(
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+    height: 22 / 18,
+    color: AppColor.primaryDark,
+  );
+  static TextStyle w400s13h18DarkBlue300 = GoogleFonts.roboto(
+    fontWeight: FontWeight.w400,
+    fontSize: 13,
+    height: 18 / 13,
+    // color: AppColor.darkBlue300,
+  );
+
+  static BoxDecoration get lightGray400R16NoBorder => BoxDecoration(
+    color: AppColor.lightGray400,
+    borderRadius: BorderRadius.circular(16),
+  );
 
   static TextStyle w400s15h20DarkBlue500 = GoogleFonts.roboto(
     fontWeight: FontWeight.w400,
@@ -42,5 +59,9 @@ class AppStyle {
     fontSize: 17,
     height: 20 / 17,
     color: AppColor.darkBlue,
+  );
+  static BoxDecoration get white16r => BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(16),
   );
 }

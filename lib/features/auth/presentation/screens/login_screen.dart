@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:oversize/config/widgets/button_widget.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
         listener: (context, state) {
           if (state is AuthSuccess) {
             // login muvaffaqiyatli bo‘ldi
-            context.pushReplacementNamed(AppRouter.home);
+            context.pushNamed(AppRouter.pinSetup);
           } else if (state is AuthFailure) {
             ScaffoldMessenger.of(
               context,

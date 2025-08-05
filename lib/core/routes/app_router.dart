@@ -22,8 +22,8 @@ class AppRouter {
   static String onboard = '/onboard';
 
   static GoRouter router = GoRouter(
-    initialLocation: onboard,
-    // initialLocation: profile,
+    // initialLocation: onboard,
+    initialLocation: home,
     routes: [
       GoRoute(
         path: AppRouter.onboard,
@@ -162,6 +162,7 @@ class AppRouter {
           return SplashScreen();
         },
       ),
+
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             MainScreen(navigationShell: navigationShell),

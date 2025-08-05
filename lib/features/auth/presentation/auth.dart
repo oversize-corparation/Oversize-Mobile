@@ -5,7 +5,6 @@ export 'package:oversize/core/constants/app_images.dart';
 export 'package:oversize/core/constants/app_colors.dart';
 export 'package:dotted_border/dotted_border.dart';
 export 'package:intl_phone_field/intl_phone_field.dart';
-export 'package:oversize/config/widgets/button_widget.dart';
 export 'package:oversize/features/auth/presentation/widgets/textfield_widget.dart';
 export 'package:intl_phone_field/country_picker_dialog.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';

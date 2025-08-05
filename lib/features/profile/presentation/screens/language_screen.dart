@@ -48,6 +48,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
 
   Widget _buildRadioTile(Locale locale, String title, Locale currentLocale) {
     return ZoomTapAnimation(
+      end: 0.97,
       onTap: () {
         _changeLanguage(locale);
       },
@@ -69,10 +70,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   : AppColor.circlePink,
               size: 30,
             ),
-            // IconButton(
-
-            //   icon:
-            // ),
           ],
         ),
       ),
