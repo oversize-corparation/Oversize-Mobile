@@ -3,8 +3,14 @@ import 'package:oversize/core/constants/app_colors.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpWidget extends StatelessWidget {
-  const OtpWidget({super.key, required this.focusNode});
+  const OtpWidget({
+    super.key,
+    required this.focusNode,
+    required this.onCompleted,
+  });
   final FocusNode? focusNode;
+  final ValueChanged<String> onCompleted;
+
   @override
   Widget build(BuildContext context) {
     return Pinput(
@@ -23,7 +29,7 @@ class OtpWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.11),
         ),
       ), // pastel ko‘k rang,
-      onCompleted: (pin) => print('Entered PIN: $pin'),
+      onCompleted: onCompleted,
     );
   }
 }
