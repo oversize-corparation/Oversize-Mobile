@@ -17,6 +17,7 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ZoomTapAnimation(
+      end: 0.98,
       onTap: ontap,
       child: Container(
         height: 75,
@@ -35,7 +36,7 @@ class ProfileWidget extends StatelessWidget {
                 title.tr(),
                 style: GoogleFonts.raleway(
                   fontWeight: FontWeight.w700,
-                  fontSize: 20,
+                  fontSize: 18,
                 ),
               ),
               Spacer(),

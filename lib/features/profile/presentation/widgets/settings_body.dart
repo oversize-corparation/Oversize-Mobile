@@ -1,4 +1,3 @@
-import 'package:country_picker/country_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oversize/core/extension/space_extension.dart';
@@ -15,8 +14,6 @@ class SettingsBody extends StatefulWidget {
 }
 
 class _SettingsBodyState extends State<SettingsBody> {
-  Country? _selectedCountry;
-
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -60,11 +57,7 @@ class _SettingsBodyState extends State<SettingsBody> {
           ),
         ),
         30.h,
-        ProfileListTile(
-          ontap: _showCountryPicker,
-          title: "country",
-          label: _selectedCountry?.name,
-        ),
+        ProfileListTile(title: "country"),
         Divider(thickness: 0.5),
         ProfileListTile(
           ontap: () {
@@ -110,25 +103,5 @@ class _SettingsBodyState extends State<SettingsBody> {
     } else {
       return "O'z";
     }
-  }
-
-  void _showCountryPicker() {
-    showCountryPicker(
-      context: context,
-      showPhoneCode: false,
-      onSelect: (Country country) {
-        setState(() {
-          _selectedCountry = country;
-        });
-      },
-      countryListTheme: CountryListThemeData(
-        borderRadius: BorderRadius.circular(10),
-        inputDecoration: InputDecoration(
-          labelText: 'searchCountry'.tr(),
-          hintText: 'searching'.tr(),
-          border: OutlineInputBorder(),
-        ),
-      ),
-    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:oversize/config/widgets/buttom_widget.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 
 class CreateAccountScreen extends StatefulWidget {
