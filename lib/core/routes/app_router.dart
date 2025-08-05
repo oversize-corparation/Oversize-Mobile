@@ -1,4 +1,5 @@
 import 'package:oversize/core/routes/export_route.dart';
+import 'package:oversize/features/app/onboard_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -18,11 +19,19 @@ class AppRouter {
   static String pinApp = '/pinApp';
   static String editProfile = '/editProfile';
   static String shippingAdres = '/shippingAdres';
+  static String onboard = '/onboard';
 
   static GoRouter router = GoRouter(
-    initialLocation: start,
+    initialLocation: onboard,
     // initialLocation: profile,
     routes: [
+      GoRoute(
+        path: AppRouter.onboard,
+        name: AppRouter.onboard,
+        builder: (context, state) {
+          return OnboardingScreen();
+        },
+      ),
       GoRoute(
         path: AppRouter.start,
         name: AppRouter.start,
