@@ -1,12 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
-<<<<<<< Updated upstream
 import 'package:oversize/core/services/local_storage.dart';
-=======
-import 'package:oversize/config/widgets/buttom_widget.dart';
-
->>>>>>> Stashed changes
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/auth/presentation/widgets/otp_widget.dart';
+import 'package:oversize/config/widgets/button_widget.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});

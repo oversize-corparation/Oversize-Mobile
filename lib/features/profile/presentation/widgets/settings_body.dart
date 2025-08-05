@@ -4,6 +4,7 @@ import 'package:oversize/core/extension/space_extension.dart';
 
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
+import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_list_tile.dart';
 
 class SettingsBody extends StatefulWidget {
@@ -43,7 +44,14 @@ class _SettingsBodyState extends State<SettingsBody> {
           title: "address",
         ),
         Divider(thickness: 0.5),
-        ProfileListTile(ontap: () {}, title: "payment"),
+        ProfileListTile(
+          ontap: () {
+            Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => PaymentScreen()));
+          },
+          title: "payment",
+        ),
         Divider(thickness: 0.5),
         30.h,
         Padding(

@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:oversize/config/widgets/buttom_widget.dart';
+import 'package:oversize/config/widgets/button_widget.dart';
 import 'package:oversize/features/app/app_export.dart';
 
 class StartScreen extends StatelessWidget {

@@ -78,6 +78,16 @@ class ProfileBody extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: Column(
                 children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      // color: AppColor.fillColor,
+                      color: AppColor.deepPurple,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    height: 150,
+                    width: double.infinity,
+                  ),
+                  24.h,
                   ProfileWidget(
                     icon: Icon(
                       CupertinoIcons.bag,

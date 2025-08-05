@@ -22,9 +22,8 @@ class AppRouter {
   static String onboard = '/onboard';
 
   static GoRouter router = GoRouter(
-    initialLocation: onboard,
-
-    // initialLocation: profile,
+    // initialLocation: onboard,
+    initialLocation: home,
     routes: [
       GoRoute(
         path: AppRouter.onboard,
