@@ -182,33 +182,29 @@ class ProfileBody extends StatelessWidget {
                           return Dialog(
                             backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius: BorderRadius.circular(19),
                             ),
                             child: Stack(
                               clipBehavior: Clip.none,
                               alignment: Alignment.topCenter,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(24, 60, 24, 24),
+                                  padding: const EdgeInsets.fromLTRB(
+                                    24,
+                                    60,
+                                    24,
+                                    24,
+                                  ),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'You are going to deleteyour account'
-                                            .tr(),
+                                        'errordialog'.tr(),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        "You won't be able to restore your data"
-                                            .tr(),
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          color: Colors.grey.shade700,
+                                        style: GoogleFonts.raleway(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColor.deepBlack,
                                         ),
                                       ),
                                       SizedBox(height: 20),
@@ -217,15 +213,17 @@ class ProfileBody extends StatelessWidget {
                                           Expanded(
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
+                                                fixedSize: Size(200, 50),
                                                 foregroundColor: Colors.white,
-                                                backgroundColor: Colors.black,
+                                                backgroundColor:
+                                                    AppColor.deepBlack,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
-                                                      BorderRadius.circular(12),
+                                                      BorderRadius.circular(16),
                                                 ),
                                               ),
                                               onPressed: () =>
-                                                  context.pop(context),
+                                                  Navigator.pop(context),
                                               child: Text('cancel'.tr()),
                                             ),
                                           ),
@@ -233,16 +231,16 @@ class ProfileBody extends StatelessWidget {
                                           Expanded(
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
+                                                fixedSize: Size(200, 50),
                                                 foregroundColor: Colors.white,
-                                                backgroundColor: Colors.red,
+                                                backgroundColor: AppColor.error,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
-                                                      BorderRadius.circular(12),
+                                                      BorderRadius.circular(16),
                                                 ),
                                               ),
-                                              onPressed: () {
-                                                context.pop();
-                                              },
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
                                               child: Text('delete'.tr()),
                                             ),
                                           ),
@@ -252,14 +250,35 @@ class ProfileBody extends StatelessWidget {
                                   ),
                                 ),
                                 Positioned(
-                                  top: -32,
-                                  child: CircleAvatar(
-                                    backgroundColor: AppColor.fillColor,
-                                    radius: 40,
-                                    child: Icon(
-                                      Icons.error,
-                                      color: AppColor.circlePink,
-                                      size: 40,
+                                  top: -35,
+                                  child: Container(
+                                    width: 80,
+                                    height: 80,
+                                    padding: EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppColor.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: AppColor.boxShadow,
+                                          offset: Offset(0, 3),
+                                          blurRadius: 8,
+                                          spreadRadius: 0,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Container(
+                                      width: 50,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xffFFEBEB),
+                                      ),
+                                      child: Icon(
+                                        Icons.error_rounded,
+                                        color: Color(0xffF1AEAE),
+                                        size: 28,
+                                      ),
                                     ),
                                   ),
                                 ),
