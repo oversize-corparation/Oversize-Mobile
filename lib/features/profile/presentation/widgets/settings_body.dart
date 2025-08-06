@@ -1,10 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oversize/core/extension/space_extension.dart';
-
 import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
-import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_list_tile.dart';
 
 class SettingsBody extends StatefulWidget {
@@ -46,9 +44,7 @@ class _SettingsBodyState extends State<SettingsBody> {
         Divider(thickness: 0.5),
         ProfileListTile(
           ontap: () {
-            Navigator.of(
-              context,
-            ).push(MaterialPageRoute(builder: (context) => PaymentScreen()));
+            context.push(AppRouter.payment);
           },
           title: "payment",
         ),

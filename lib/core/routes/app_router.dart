@@ -1,5 +1,6 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/app/onboard_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -20,6 +21,7 @@ class AppRouter {
   static String editProfile = '/editProfile';
   static String shippingAdres = '/shippingAdres';
   static String onboard = '/onboard';
+  static String payment = '/payment';
 
   static GoRouter router = GoRouter(
     // initialLocation: onboard,
@@ -228,6 +230,13 @@ class AppRouter {
                 },
               ),
               GoRoute(
+                path: AppRouter.payment,
+                name: AppRouter.payment,
+                builder: (context, state) {
+                  return PaymentScreen();
+                },
+              ),
+              GoRoute(
                 path: AppRouter.language,
                 name: AppRouter.language,
                 builder: (context, state) {
@@ -241,7 +250,6 @@ class AppRouter {
                   return CurrencyScreen();
                 },
               ),
-
               GoRoute(
                 path: AppRouter.editProfile,
                 name: AppRouter.editProfile,

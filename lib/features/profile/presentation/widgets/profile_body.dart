@@ -6,6 +6,7 @@ import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/core/widgets/support_dialog.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/profile/presentation/screens/empty_order_screen.dart';
+import 'package:oversize/features/profile/presentation/screens/empty_review_screen.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_widget.dart';
 
 class ProfileBody extends StatelessWidget {
@@ -123,7 +124,16 @@ class ProfileBody extends StatelessWidget {
                       size: 24,
                       color: AppColor.deepPurple,
                     ),
-                    ontap: () {},
+                    ontap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return EmptyReviewScreen();
+                          },
+                        ),
+                      );
+                    },
                   ),
                   ProfileWidget(
                     icon: Icon(
