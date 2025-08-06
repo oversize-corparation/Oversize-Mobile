@@ -51,17 +51,24 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
         height: 50,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: isSelected ? AppColor.circlePink : AppColor.lightBlue,
+          color: isSelected ? Color(0xffFFEBEB) : AppColor.profileLitTile,
           borderRadius: BorderRadius.circular(14),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title),
-            Icon(
-              isSelected ? Icons.check_circle : Icons.circle,
-              color: isSelected ? AppColor.deepPurple : AppColor.darkBlue,
-              size: 30,
+            Container(
+              decoration: BoxDecoration(
+                color: AppColor.white,
+                border: Border.all(color: AppColor.white),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                isSelected ? Icons.check_circle : Icons.circle,
+                color: isSelected ? AppColor.deepPurple : AppColor.circlePink,
+                size: 30,
+              ),
             ),
           ],
         ),

@@ -56,19 +56,28 @@ class _LanguageScreenState extends State<LanguageScreen> {
         height: 50,
         padding: EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: AppColor.profileLitTile,
+          color: currentLocale == locale
+              ? Color(0xffFFEBEB)
+              : AppColor.profileLitTile,
           borderRadius: BorderRadius.circular(14),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title),
-            Icon(
-              currentLocale == locale ? Icons.check_circle : Icons.circle,
-              color: currentLocale == locale
-                  ? AppColor.deepPurple
-                  : AppColor.circlePink,
-              size: 30,
+            Container(
+              decoration: BoxDecoration(
+                color: AppColor.white,
+                border: Border.all(color: AppColor.white),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                currentLocale == locale ? Icons.check_circle : Icons.circle,
+                color: currentLocale == locale
+                    ? AppColor.deepPurple
+                    : AppColor.circlePink,
+                size: 30,
+              ),
             ),
           ],
         ),
