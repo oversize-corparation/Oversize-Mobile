@@ -54,5 +54,13 @@
     "connection": "Contact us",
     "firstname": "First name",
     "lastname": "Last name",
-    "see": "View product"
+    "support_number": "Trust phone number",
+    "see": "View product",
+    "support": "Support Center",
+    "editcard": "Edit Card",
+    "addcard": "Add Card",
+    "cardNumber": "Card Number",
+    "holder": "Card Holder",
+    "date": "Valid Date",
+    "add": "Save"
 }
