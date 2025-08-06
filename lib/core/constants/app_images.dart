@@ -18,8 +18,13 @@ abstract class AppImages {
   static const String bubbleOtp2 = "assets/images/bubble_otp2.svg";
   static const String bubbleLOnboard = "assets/images/bubble_onboarding.svg";
    static const String bubbleLOnboard2 = "assets/images/bubble_onboarding2.svg";
+  static const String visa = "assets/icons/visa.svg";
+  static const String mastercard = "assets/icons/mastercard.svg";
+
 
   // png
   static const String logoBlack = "assets/icons/logo_black.png";
   static const String logoWhite = "assets/icons/logo_white.png";
+  static const String humo = "assets/icons/humo.png";
+  static const String uzcard = "assets/icons/uzcard.jpeg";
 }

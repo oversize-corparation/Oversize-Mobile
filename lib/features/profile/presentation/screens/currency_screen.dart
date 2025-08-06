@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:oversize/core/constants/app_colors.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class CurrencyScreen extends StatefulWidget {
   const CurrencyScreen({super.key});
@@ -9,6 +11,8 @@ class CurrencyScreen extends StatefulWidget {
 }
 
 class _CurrencyScreenState extends State<CurrencyScreen> {
+  String? selectedCurrency;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,22 +21,51 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
         backgroundColor: Colors.white,
         title: Text("currency".tr()),
       ),
-      body: Column(
-        children: [
-          _buildRadioTile(const Locale('uz'), '\$ USD'),
-          _buildRadioTile(const Locale('en'), '€ EURO'),
-          _buildRadioTile(const Locale('ru'), '₽ RUB'),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            const SizedBox(height: 6),
+            _buildRadioTile('\$ USD'),
+            const SizedBox(height: 6),
+            _buildRadioTile('€ EURO'),
+            const SizedBox(height: 6),
+            _buildRadioTile('₽ RUB'),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildRadioTile(Locale locale, String title) {
-    return RadioListTile(
-      title: Text(title),
-      value: locale,
-      groupValue: true,
-      onChanged: (value) {},
+  Widget _buildRadioTile(String title) {
+    bool isSelected = selectedCurrency == title;
+
+    return ZoomTapAnimation(
+      end: 0.97,
+      onTap: () {
+        setState(() {
+          selectedCurrency = title;
+        });
+      },
+      child: Container(
+        height: 50,
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColor.circlePink : AppColor.lightBlue,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(title),
+            Icon(
+              isSelected ? Icons.check_circle : Icons.circle,
+              color: isSelected ? AppColor.deepPurple : AppColor.darkBlue,
+              size: 30,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

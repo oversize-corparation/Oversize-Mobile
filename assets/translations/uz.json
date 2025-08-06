@@ -51,8 +51,16 @@
     "order": "Buyurtmalarim",
     "sharh": "Sharhlarim",
     "caller": "Sotuvchi bo'lish",
+    "support": "Qo'llab-quvvatlash markazi",
     "chat": "Chatlarim",
     "connection": "Biz bilan bog'lanish",
+    "support_number": "Ishonch telefon raqami",
     "lastname": "Familiya",
-    "see": "Mahsulotni ko'rish"
+    "see": "Mahsulotni ko'rish",
+    "editcard": "Hisob raqamni tahrirlash",
+    "addcard": "Hisob raqam qo'shish",
+    "cardNumber": "Hisob raqam",
+    "holder": "Hisob raqam egasi",
+    "date": "Amal qilish muddati",
+    "add": "Saqlash"
 }

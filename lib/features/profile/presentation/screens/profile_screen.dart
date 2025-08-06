@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oversize/core/extension/space_extension.dart';
-import 'package:oversize/core/routes/app_router.dart';
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
-import 'package:oversize/features/profile/presentation/widgets/button_widget.dart';
 import 'package:oversize/features/profile/presentation/widgets/profile_body.dart';
 
 class ProfileScreen extends StatelessWidget {
