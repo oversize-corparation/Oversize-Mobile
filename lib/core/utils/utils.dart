@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
 
 class Utils {
@@ -11,6 +12,23 @@ class Utils {
 
   static final CardNumberInputFormatter cardNumberFormatter =
       CardNumberInputFormatter();
+
+  /// Cash Format
+  static String cashFormat(String cash) {
+    if (cash.contains('.')) {
+      cash = cash.substring(0, cash.indexOf('.'));
+    }
+
+    final formatCurrency = NumberFormat.currency(name: '', locale: "uz");
+
+    cash = formatCurrency.format(int.parse(cash)).toString();
+
+    if (cash.contains(',')) {
+      cash = cash.substring(0, cash.indexOf(','));
+    }
+
+    return cash;
+  }
 
   static String identifyCardType(String cardNumber) {
     final cleanCardNumber = cardNumber.replaceAll(RegExp(r'\D'), '');

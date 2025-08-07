@@ -62,5 +62,10 @@
     "cardNumber": "Card Number",
     "holder": "Card Holder",
     "date": "Valid Date",
-    "add": "Save"
+    "add": "Save",
+    "checkout": "Formalization",
+    "total": "Total",
+    "all": "See All",
+    "popular": "Most Popular",
+    "wishlist": "From Your Wish List"
 }
