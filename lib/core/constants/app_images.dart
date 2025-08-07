@@ -21,6 +21,9 @@ abstract class AppImages {
   static const String visa = "assets/icons/visa.svg";
   static const String mastercard = "assets/icons/mastercard.svg";
   static const String emptyCart = "assets/icons/empty_cart.svg";
+  static const String favoriteCart = "assets/icons/Favorites_empty.svg";
+  static const String upArrow = "assets/icons/up_arrow.svg";
+  static const String downArrow = "assets/icons/down_arrow.svg";
 
   // png
   static const String logoBlack = "assets/icons/logo_black.png";

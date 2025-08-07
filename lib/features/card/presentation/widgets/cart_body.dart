@@ -65,7 +65,6 @@ class CartBody extends StatelessWidget {
             onIncrease: () {},
             onDecrease: () {},
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -112,25 +111,10 @@ class CartBody extends StatelessWidget {
               ],
             ),
           ),
-
-          // Container(
-          //   decoration: BoxDecoration(
-          //     shape: BoxShape.circle,
-          //     boxShadow: [
-          //       BoxShadow(
-          //         color: Colors.black.withOpacity(0.2),
-          //         blurRadius: 10,
-          //         offset: Offset(0, 4),
-          //       ),
-          //     ],
-          //   ),
-          //   child: CircleAvatar(
-          //     backgroundColor: Colors.white,
-          //     radius: 80,
-          //     child: SvgPicture.asset(
-          //       AppImages.emptyCart,
-          //       // color: AppColor.darkBlue,
-          //     ),
+          // EmptyWidget(
+          //   image: SvgPicture.asset(
+          //     AppImages.emptyCart,
+          //     color: AppColor.deepPurple,
           //   ),
           // ),
         ],
