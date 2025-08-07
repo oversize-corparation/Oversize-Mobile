@@ -10,6 +10,19 @@ class AppStyle {
     color: AppColor.primaryDark,
   );
 
+  static BoxDecoration get lightGray100R14B1White => BoxDecoration(
+    color: AppColor.lightGray100,
+    borderRadius: BorderRadius.circular(14),
+    border: Border.all(width: 1, color: Colors.white),
+  );
+
+  static TextStyle w500s15h20Primary = GoogleFonts.roboto(
+    fontWeight: FontWeight.w500,
+    fontSize: 15,
+    height: 20 / 15,
+    color: AppColor.primaryDark,
+  );
+
   static TextStyle w800s17h22Dark = GoogleFonts.roboto(
     fontWeight: FontWeight.w800,
     fontSize: 17,
@@ -65,6 +78,11 @@ class AppStyle {
 
   static BoxDecoration get white16r => BoxDecoration(
     color: Colors.white,
+    borderRadius: BorderRadius.circular(16),
+  );
+
+  static BoxDecoration get pink16r => BoxDecoration(
+    color: AppColor.circlePink,
     borderRadius: BorderRadius.circular(16),
   );
 }

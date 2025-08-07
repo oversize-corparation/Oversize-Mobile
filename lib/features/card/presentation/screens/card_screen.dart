@@ -7,6 +7,7 @@ class CardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.locale;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(title: Text("card".tr()), backgroundColor: Colors.white),

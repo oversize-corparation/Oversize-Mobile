@@ -67,5 +67,8 @@
     "total": "Total",
     "all": "See All",
     "popular": "Most Popular",
-    "wishlist": "From Your Wish List"
+    "wishlist": "From Your Wish List",
+    "view": "Recently viewed",
+    "yesterday": "Yesterday",
+    "today": "Today"
 }
