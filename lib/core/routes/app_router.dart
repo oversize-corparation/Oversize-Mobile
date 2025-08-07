@@ -186,7 +186,7 @@ class AppRouter {
                 path: AppRouter.category,
                 name: AppRouter.category,
                 builder: (context, state) {
-                  return CategoryScreen();
+                  return FavouriteScreen();
                 },
               ),
             ],
@@ -197,7 +197,7 @@ class AppRouter {
                 path: AppRouter.favourite,
                 name: AppRouter.favourite,
                 builder: (context, state) {
-                  return FavouriteScreen();
+                  return CategoryScreen();
                 },
               ),
             ],

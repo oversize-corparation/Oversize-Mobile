@@ -62,5 +62,10 @@
     "cardNumber": "Hisob raqam",
     "holder": "Hisob raqam egasi",
     "date": "Amal qilish muddati",
-    "add": "Saqlash"
+    "add": "Saqlash",
+    "checkout": "Rasmiylashtirish",
+    "total": "Jami",
+    "all": "Hammasi",
+    "popular": "Eng ommaboplar",
+    "wishlist": "Istaklaringiz ro‘yxatidan"
 }

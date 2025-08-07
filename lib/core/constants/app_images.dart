@@ -17,10 +17,10 @@ abstract class AppImages {
   static const String bubbleOtp = "assets/images/bubble_otp.svg";
   static const String bubbleOtp2 = "assets/images/bubble_otp2.svg";
   static const String bubbleLOnboard = "assets/images/bubble_onboarding.svg";
-   static const String bubbleLOnboard2 = "assets/images/bubble_onboarding2.svg";
+  static const String bubbleLOnboard2 = "assets/images/bubble_onboarding2.svg";
   static const String visa = "assets/icons/visa.svg";
   static const String mastercard = "assets/icons/mastercard.svg";
-
+  static const String emptyCart = "assets/icons/empty_cart.svg";
 
   // png
   static const String logoBlack = "assets/icons/logo_black.png";
