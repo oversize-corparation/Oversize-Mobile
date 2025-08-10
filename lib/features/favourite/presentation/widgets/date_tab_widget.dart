@@ -18,9 +18,11 @@ class DateTabWidget extends StatelessWidget {
     return ZoomTapAnimation(
       onTap: ontap,
       child: AnimatedContainer(
+        height: 30,
         duration: const Duration(milliseconds: 250),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: isSelected ? AppStyle.pink16r : const BoxDecoration(),
+        margin: EdgeInsets.symmetric(horizontal: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        decoration: isSelected ? AppStyle.pink16r : AppStyle.white16r,
         child: Row(
           mainAxisAlignment:
               MainAxisAlignment.center, // Matnni markazga joylashtirish
@@ -30,10 +32,8 @@ class DateTabWidget extends StatelessWidget {
               label,
               textAlign: TextAlign.center,
               style: isSelected
-                  ? AppStyle.w500s15h20Primary.copyWith(
-                      color: AppColor.deepPurple,
-                    )
-                  : AppStyle.w500s15h20Primary,
+                  ? AppStyle.w700s15Raleway.copyWith(color: AppColor.deepPurple)
+                  : AppStyle.w700s15Raleway,
             ),
             // if (isSelected) ...[
             //   20.w,

@@ -19,73 +19,82 @@ class _RecentlyViewedScreenState extends State<RecentlyViewedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white, title: Text("view".tr())),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        title: Text(
+          "view".tr(),
+          style: GoogleFonts.raleway(fontSize: 28, fontWeight: FontWeight.w700),
+        ),
+      ),
       body: Column(
         children: [
-          ValueListenableBuilder(
-            valueListenable: type,
-            builder: (context, value, _) {
-              return Container(
-                height: 40,
-                padding: EdgeInsets.symmetric(horizontal: 2, vertical: 2),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 4,
-                      child: DateTabWidget(
-                        label: "today".tr(),
-                        isSelected: type.value == 1,
-                        ontap: () {
-                          type.value = 1;
-                        },
-                      ),
-                    ),
-                    Expanded(
-                      flex: 4,
-                      child: ValueListenableBuilder<DateTime?>(
-                        valueListenable: selectedCustomDate,
-                        builder: (context, customDate, _) {
-                          final title = customDate == null
-                              ? "yesterday".tr()
-                              : DateFormat('MMMM, dd').format(customDate);
-                          return DateTabWidget(
-                            label: title,
-                            isSelected: type.value == 2,
-                            ontap: () {
-                              type.value = 2;
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                    Expanded(
-                      // flex: 3,
-                      child: IconButton(
-                        style: IconButton.styleFrom(
-                          shape: CircleBorder(),
-                          backgroundColor: AppColor.deepPurple,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: ValueListenableBuilder(
+              valueListenable: type,
+              builder: (context, value, _) {
+                return Container(
+                  height: 40,
+                  padding: EdgeInsets.symmetric(horizontal: 2, vertical: 2),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 4,
+                        child: DateTabWidget(
+                          label: "today".tr(),
+                          isSelected: type.value == 1,
+                          ontap: () {
+                            type.value = 1;
+                          },
                         ),
-                        onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) => CalendarWidget(
-                              onDateSelected: (selectedDate) {
-                                // bu yerda "Yesterday" o‘rnini yangilash
-                                // type.value = 3;
-                                selectedCustomDate.value = selectedDate;
-                              },
-                            ),
-                          );
-                        },
-                        icon: SvgPicture.asset(AppImages.downArrow),
                       ),
-                    ),
-                  ],
-                ),
-              );
-            },
+                      Expanded(
+                        flex: 4,
+                        child: ValueListenableBuilder<DateTime?>(
+                          valueListenable: selectedCustomDate,
+                          builder: (context, customDate, _) {
+                            final title = customDate == null
+                                ? "yesterday".tr()
+                                : DateFormat('MMMM, dd').format(customDate);
+                            return DateTabWidget(
+                              label: title,
+                              isSelected: type.value == 2,
+                              ontap: () {
+                                type.value = 2;
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        // flex: 3,
+                        child: IconButton(
+                          style: IconButton.styleFrom(
+                            shape: CircleBorder(),
+                            backgroundColor: AppColor.deepPurple,
+                          ),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => CalendarWidget(
+                                onDateSelected: (selectedDate) {
+                                  // bu yerda "Yesterday" o‘rnini yangilash
+                                  // type.value = 3;
+                                  selectedCustomDate.value = selectedDate;
+                                },
+                              ),
+                            );
+                          },
+                          icon: SvgPicture.asset(AppImages.downArrow),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
-          20.h,
           ValueListenableBuilder(
             valueListenable: type,
             builder: (context, value, _) {

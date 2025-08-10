@@ -22,6 +22,11 @@ class AppStyle {
     height: 20 / 15,
     color: AppColor.primaryDark,
   );
+  static TextStyle w700s15Raleway = GoogleFonts.raleway(
+    fontWeight: FontWeight.w700,
+    fontSize: 15,
+    color: AppColor.cancel,
+  );
 
   static TextStyle w800s17h22Dark = GoogleFonts.roboto(
     fontWeight: FontWeight.w800,
@@ -59,7 +64,8 @@ class AppStyle {
   static TextStyle w700s18h34DarkBluePrimary = GoogleFonts.raleway(
     fontWeight: FontWeight.w700,
     fontSize: 18,
-    color: AppColor.primaryDark,
+    color: AppColor.cancel,
+
   );
 
   // static TextStyle w500s15h20DarkBlue500 = GoogleFonts.roboto(
@@ -77,7 +83,7 @@ class AppStyle {
   // );
 
   static BoxDecoration get white16r => BoxDecoration(
-    color: Colors.white,
+    color: AppColor.profileLitTile,
     borderRadius: BorderRadius.circular(16),
   );
 

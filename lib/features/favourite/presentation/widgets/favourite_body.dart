@@ -11,7 +11,7 @@ class FavouriteBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: ListView(
         children: [
           Row(
@@ -20,6 +20,7 @@ class FavouriteBody extends StatelessWidget {
                 "view".tr(),
                 style: AppStyle.w700s18h34DarkBluePrimary.copyWith(
                   fontSize: 21,
+                  letterSpacing: -0.21,
                 ),
               ),
               Spacer(),
