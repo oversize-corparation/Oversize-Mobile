@@ -106,7 +106,7 @@ class CartBody extends StatelessWidget {
                   imageUrl:
                       "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1zmZ4r.img?w=1280&h=720&m=4&q=79",
                   type: "New",
-                  qty: 1780,
+                  qty: "1780💙",
                 ),
               ],
             ),

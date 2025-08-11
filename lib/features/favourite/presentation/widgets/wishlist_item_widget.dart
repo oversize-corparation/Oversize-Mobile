@@ -32,7 +32,7 @@ class WishlistItemWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
                 imageUrl,
-                width: 120,
+                width: 130,
                 height: 100,
                 fit: BoxFit.cover,
               ),
@@ -61,28 +61,43 @@ class WishlistItemWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: TextStyle(fontSize: 14)),
+              Text(
+                title,
+                style: GoogleFonts.nunitoSans(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                ),
+              ),
               SizedBox(height: 6),
               Text(
                 "\$${price.toStringAsFixed(2)}",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: GoogleFonts.raleway(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18,
+                ),
               ),
               SizedBox(height: 8),
               Row(
                 children: [
-                  Chip(label: Text(color), backgroundColor: AppColor.lightPink),
+                  Chip(
+                    label: Text(color),
+                    labelStyle: GoogleFonts.raleway(
+                      fontWeight: FontWeight.w500,
+                    ),
+                    backgroundColor: AppColor.lightPink,
+                  ),
                   SizedBox(width: 6),
-                  Chip(label: Text(size), backgroundColor: AppColor.lightPink),
+                  Chip(
+                    label: Text(size),
+                    labelStyle: GoogleFonts.raleway(
+                      fontWeight: FontWeight.w500,
+                    ),
+                    backgroundColor: AppColor.lightPink,
+                  ),
                   Spacer(),
                   GestureDetector(
                     onTap: onAddToCart,
-                    child: Icon(
-                      // ? Icons.shopping_cart_checkout_rounded
-                      // :
-                      Icons.shopping_cart_outlined,
-                      color: AppColor.deepPurple,
-                      size: 28,
-                    ),
+                    child: SvgPicture.asset(AppImages.add),
                   ),
                 ],
               ),

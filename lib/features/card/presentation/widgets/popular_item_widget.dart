@@ -4,7 +4,7 @@ import 'package:oversize/features/app/app_export.dart';
 class PopularItemWidget extends StatelessWidget {
   final String imageUrl;
   final String type;
-  final int qty;
+  final String qty;
   const PopularItemWidget({
     super.key,
     required this.imageUrl,
@@ -45,7 +45,7 @@ class PopularItemWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
               height: 100,
-              width: 100,
+              width: 110,
               imageUrl,
               fit: BoxFit.cover,
             ),
@@ -54,7 +54,12 @@ class PopularItemWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(qty.toString(), style: AppStyle.w700s18h34DarkBluePrimary),
+              Text(
+                qty.toString(),
+                style: AppStyle.w700s18h34DarkBluePrimary.copyWith(
+                  fontSize: 15,
+                ),
+              ),
               Text(type, style: AppStyle.w500s14h28Black500),
             ],
           ),

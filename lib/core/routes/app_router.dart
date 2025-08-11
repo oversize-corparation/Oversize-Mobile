@@ -223,6 +223,13 @@ class AppRouter {
                 },
               ),
               GoRoute(
+                path: AppRouter.editProfile,
+                name: AppRouter.editProfile,
+                builder: (context, state) {
+                  return EditProfile();
+                },
+              ),
+              GoRoute(
                 path: AppRouter.settings,
                 name: AppRouter.settings,
                 builder: (context, state) {
@@ -250,13 +257,7 @@ class AppRouter {
                   return CurrencyScreen();
                 },
               ),
-              GoRoute(
-                path: AppRouter.editProfile,
-                name: AppRouter.editProfile,
-                builder: (context, state) {
-                  return EditProfile();
-                },
-              ),
+
               GoRoute(
                 path: AppRouter.shippingAdres,
                 name: AppRouter.shippingAdres,
