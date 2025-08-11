@@ -75,16 +75,16 @@ class _RecentlyViewedScreenState extends State<RecentlyViewedScreen> {
                             backgroundColor: AppColor.deepPurple,
                           ),
                           onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context) => CalendarWidget(
-                                onDateSelected: (selectedDate) {
-                                  // bu yerda "Yesterday" o‘rnini yangilash
-                                  // type.value = 3;
-                                  selectedCustomDate.value = selectedDate;
-                                },
-                              ),
-                            );
+                            // showDialog(
+                            //   context: context,
+                            //   // builder: (context) => CalendarWidget(
+                            //   //   onDateSelected: (selectedDate) {
+                            //   //     // bu yerda "Yesterday" o‘rnini yangilash
+                            //   //     // type.value = 3;
+                            //   //     selectedCustomDate.value = selectedDate;
+                            //   //   },
+                            //   // ),
+                            // );
                           },
                           icon: SvgPicture.asset(AppImages.downArrow),
                         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/utils/utils.dart';
 import 'package:oversize/features/app/app_export.dart';
 
@@ -35,7 +36,7 @@ class CartItemCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
                 imageUrl,
-                width: 120,
+                width: 125,
                 height: 100,
                 fit: BoxFit.cover,
               ),
@@ -85,14 +86,15 @@ class CartItemCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "\$ ${Utils.cashFormat(price.toString())},00",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                    "\$${Utils.cashFormat(price.toString())},00",
+                    style: AppStyle.w700s15Raleway.copyWith(fontSize: 18),
                   ),
                   Row(
                     children: [
                       IconButton(
                         icon: Icon(
                           Icons.remove_circle_outline,
+                          size: 30,
                           color: AppColor.deepPurple,
                         ),
                         onPressed: onDecrease,
@@ -115,6 +117,7 @@ class CartItemCard extends StatelessWidget {
                         icon: Icon(
                           Icons.add_circle_outline,
                           color: AppColor.deepPurple,
+                          size: 30,
                         ),
                         onPressed: onIncrease,
                       ),

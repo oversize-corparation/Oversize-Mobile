@@ -24,8 +24,7 @@ class DateTabWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         decoration: isSelected ? AppStyle.pink16r : AppStyle.white16r,
         child: Row(
-          mainAxisAlignment:
-              MainAxisAlignment.center, // Matnni markazga joylashtirish
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
@@ -35,13 +34,6 @@ class DateTabWidget extends StatelessWidget {
                   ? AppStyle.w700s15Raleway.copyWith(color: AppColor.deepPurple)
                   : AppStyle.w700s15Raleway,
             ),
-            // if (isSelected) ...[
-            //   20.w,
-            //   CircleAvatar(
-            //     radius: 20,
-            //     child: Icon(Icons.check, color: Colors.white, size: 14),
-            //   ),
-            // ],
           ],
         ),
       ),

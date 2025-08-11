@@ -17,11 +17,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("payment".tr()), centerTitle: true),
+      appBar: AppBar(title: Text("settings".tr()), centerTitle: true),
       body: Padding(
         padding: EdgeInsets.all(14),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              "payment".tr(),
+              style: GoogleFonts.raleway(
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+              ),
+            ),
+            28.h,
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(

@@ -11,7 +11,7 @@ class EditProfile extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("profile".tr()),
+        title: Text("settings".tr()),
       ),
       body: EditProfileBody(),
     );

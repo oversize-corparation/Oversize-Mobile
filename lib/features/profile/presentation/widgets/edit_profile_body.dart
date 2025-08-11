@@ -35,7 +35,16 @@ class _EditProfileBodyState extends State<EditProfileBody> {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              "profile".tr(),
+              style: GoogleFonts.raleway(
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+              ),
+            ),
+            18.h,
             Stack(
               children: [
                 CircleAvatar(
