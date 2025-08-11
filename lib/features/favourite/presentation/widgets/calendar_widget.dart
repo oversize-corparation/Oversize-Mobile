@@ -32,9 +32,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
       _currentDate.month,
     );
     final firstDayOfMonth = DateTime(_currentDate.year, _currentDate.month, 1);
-    final weekdayOfFirst = firstDayOfMonth.weekday; // 1 = Monday, 7 = Sunday
+    final weekdayOfFirst = firstDayOfMonth.weekday;
 
-    // Bo'sh kunlar qo'shish (hafta boshidan boshlanish uchun)
     for (int i = 1; i < weekdayOfFirst; i++) {
       days.add(const SizedBox(width: 40, height: 40));
     }
