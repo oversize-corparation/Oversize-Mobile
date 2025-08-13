@@ -1,5 +1,3 @@
-
-
 import 'package:oversize/features/app/app_export.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,22 +16,35 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _initApp() async {
     await HiveLocalStorageService.init(); // Hive init qilinadi
-
     await Future.delayed(const Duration(seconds: 2)); // fake loading
 
-    final savedPin = HiveLocalStorageService.getValue<String>('user_pin');
+    // 1️⃣ Onboarding flag tekshirish
+    final isOnboarded = HiveLocalStorageService.getValue<bool>('isOnboarded') ?? false;
+    if (!isOnboarded) {
+      context.pushReplacement(AppRouter.onboard);
+      return;
+    }
 
+    // 2️⃣ Auth tekshirish (token yoki foydalanuvchi ma'lumotlari Hive'da bormi)
+    final accessToken = HiveLocalStorageService.getValue<String>('access_token');
+    if (accessToken == null || accessToken.isEmpty) {
+      context.pushReplacement(AppRouter.start); // login yoki start screen
+      return;
+    }
+
+    // 3️⃣ PIN tekshirish
+    final savedPin = HiveLocalStorageService.getValue<String>('user_pin');
     if (savedPin != null && savedPin.isNotEmpty) {
-      // Agar PIN mavjud bo‘lsa — Pin kiritish screen
       context.pushReplacement(AppRouter.pinSetup);
     } else {
-      // Agar PIN mavjud bo‘lmasa — to‘g‘ridan-to‘g‘ri home screen
-      context.pushReplacement(AppRouter.start);
+      context.pushReplacement(AppRouter.home); // to'g'ridan-to'g'ri home
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    return const Scaffold(
+      body: Center(child: CircularProgressIndicator()),
+    );
   }
 }

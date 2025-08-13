@@ -24,8 +24,8 @@ class AppRouter {
   static String payment = '/payment';
 
   static GoRouter router = GoRouter(
-    // initialLocation: splash,
-    initialLocation: home,
+    initialLocation: splash,
+    // initialLocation: home,
     routes: [
       GoRoute(
         path: AppRouter.onboard,

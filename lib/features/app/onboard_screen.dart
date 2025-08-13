@@ -36,6 +36,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       'subtitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     final isLast = _currentIndex == onboardingData.length - 1;
@@ -49,7 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           if (isLast)
             Align(
-              alignment: Alignment(1, 1),
+              alignment: const Alignment(1, 1),
               child: SvgPicture.asset(AppImages.bubbleLOnboard2),
             ),
           SafeArea(
@@ -83,7 +84,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           children: [
                             Expanded(
                               child: ClipRRect(
-                                borderRadius: BorderRadiusGeometry.only(
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(30),
                                   topRight: Radius.circular(30),
                                 ),
@@ -120,10 +121,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     SizedBox(
                                       width: 201,
                                       child: ButtonWidget(
-                                        onPressed: () {
-                                          // TODO: Navigate to home or login
+                                        onPressed: () async {
+                                          // Onboarding flag saqlash
+                                          await HiveLocalStorageService.setValue(
+                                            'isOnboarded',
+                                            true,
+                                          );
+                                          // Keyingi safar Splash to'g'ridan-to'g'ri auth/start screen ochadi
+                                          context.pushReplacement(
+                                            AppRouter.start,
+                                          );
                                         },
-
                                         text: "Let's Start",
                                       ),
                                     ),
