@@ -65,9 +65,13 @@ class AppStyle {
     fontWeight: FontWeight.w700,
     fontSize: 18,
     color: AppColor.cancel,
-
   );
 
+  static TextStyle w400s14hnunitoSunsBlack = GoogleFonts.nunitoSans(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    color: Colors.black,
+  );
   // static TextStyle w500s15h20DarkBlue500 = GoogleFonts.roboto(
   //   fontWeight: FontWeight.w500,
   //   fontSize: 15,

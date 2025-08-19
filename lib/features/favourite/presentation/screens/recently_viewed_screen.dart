@@ -153,15 +153,17 @@ class _RecentlyViewedScreenState extends State<RecentlyViewedScreen> {
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1 / 1.5,
-          mainAxisSpacing: 10,
+          childAspectRatio: 1 / 1.4,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
         ),
         itemCount: 20,
         itemBuilder: (context, index) {
           return ProductItemWidget(
-            img: imageUrl,
+            image: imageUrl,
             name: 'Lorem ipsum dolor sit amet consectetur',
-            price: '\$17,00',
+            price: 17,
+            ontap: () {},
           );
         },
       ),
