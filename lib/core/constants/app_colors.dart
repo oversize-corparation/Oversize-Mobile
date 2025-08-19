@@ -12,9 +12,11 @@ class AppColor {
   static const Color profileLitTile = Color(0xFFF9F9F9);
   static const Color lightPink = Color(0xFFFCE5EC);
   static const Color primaryDark = Color(0xFF2C3955);
-  // static const Color homeCategoryItem = Color(0xFFF7F7F7);
+  static const LinearGradient saleGradient = LinearGradient(
+    colors: [Color(0xFFF81140), Color(0xFFFF5790)],
+  );
   // static const Color lightGray50 = Color.fromRGBO(64, 79, 111, 0.50);
-  // static const Color darkBlue500 = Color(0xFF404F6F);
+  static const Color sale = Color(0xFFF1AEAE);
   // static const Color lightGray700 = Color(0xFF939497);
   static const Color deepPurple = Color(0xffE03EDA);
   static const Color boxShadow = Color(0x29000000);

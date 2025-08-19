@@ -37,7 +37,7 @@ class CardScreen extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              "${"total".tr()} \$0,00",
+              "${"total".tr()} \$34,00",
               style: GoogleFonts.raleway(
                 fontWeight: FontWeight.w800,
                 fontSize: 20,

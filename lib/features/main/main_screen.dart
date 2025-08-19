@@ -23,6 +23,7 @@ class _MainScreenState extends State<MainScreen> {
         listenable: MainSources.currentPage,
         builder: (context, child) {
           return BottomNavigationBar(
+            backgroundColor: Colors.white,
             currentIndex: MainSources.currentPage.value,
             onTap: (value) async {
               MainSources.currentPage.value = value;
@@ -61,12 +62,17 @@ class _MainScreenState extends State<MainScreen> {
                 label: "",
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  AppImages.card,
-                  height: 24,
-                  color: MainSources.currentPage.value == 3
-                      ? AppColor.deepBlack
-                      : AppColor.deepPurple,
+                icon: Badge(
+                  backgroundColor: AppColor.deepPurple,
+                  largeSize: 20,
+                  smallSize: 10,
+                  child: SvgPicture.asset(
+                    AppImages.card,
+                    height: 24,
+                    color: MainSources.currentPage.value == 3
+                        ? AppColor.deepBlack
+                        : AppColor.deepPurple,
+                  ),
                 ),
                 label: "",
               ),
