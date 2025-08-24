@@ -14,7 +14,7 @@ class RecomendedList extends StatelessWidget {
         clipBehavior: Clip.none,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.1 / 1.6,
+          childAspectRatio: 1 / 1.5,
           mainAxisSpacing: 10,
           crossAxisSpacing: 8,
         ),

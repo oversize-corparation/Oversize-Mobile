@@ -3,7 +3,6 @@ import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/widgets/row_widget.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/card/presentation/widgets/most_popular_products.dart';
-import 'package:oversize/features/card/presentation/widgets/popular_item_widget.dart';
 import 'package:oversize/features/favourite/presentation/screens/recently_viewed_screen.dart';
 import 'package:oversize/features/favourite/presentation/widgets/wishlist_item_widget.dart';
 

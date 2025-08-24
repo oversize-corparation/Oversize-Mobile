@@ -25,6 +25,7 @@ abstract class AppImages {
   static const String upArrow = "assets/icons/up_arrow.svg";
   static const String downArrow = "assets/icons/down_arrow.svg";
   static const String add = "assets/icons/Add.svg";
+  static const String filter = "assets/icons/filter.svg";
 
   // png
   static const String logoBlack = "assets/icons/logo_black.png";

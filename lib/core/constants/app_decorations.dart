@@ -13,4 +13,14 @@ class AppDecorations {
       ),
     ],
   );
+
+  static BoxDecoration flashInk = BoxDecoration(
+    color: AppColor.lightPink,
+    borderRadius: BorderRadius.circular(10),
+  );
+
+  static BoxDecoration flashwhite = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(10),
+  );
 }

@@ -1,5 +1,6 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/app/onboard_screen.dart';
+import 'package:oversize/features/home/presentation/screens/flash_sale_screen.dart';
 import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 
 class AppRouter {
@@ -22,6 +23,7 @@ class AppRouter {
   static String shippingAdres = '/shippingAdres';
   static String onboard = '/onboard';
   static String payment = '/payment';
+  static String flashSale = '/flashSale';
 
   static GoRouter router = GoRouter(
     // initialLocation: splash,
@@ -176,6 +178,13 @@ class AppRouter {
                 name: AppRouter.home,
                 builder: (context, state) {
                   return HomeScreen();
+                },
+              ),
+              GoRoute(
+                path: AppRouter.flashSale,
+                name: AppRouter.flashSale,
+                builder: (context, state) {
+                  return FlashSaleScreen();
                 },
               ),
             ],

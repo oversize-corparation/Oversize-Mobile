@@ -5,6 +5,7 @@ import 'package:oversize/core/widgets/row_widget.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/card/presentation/widgets/most_popular_products.dart';
 import 'package:oversize/features/home/presentation/widgets/categories_box.dart';
+import 'package:oversize/features/home/presentation/widgets/flesh_sale_items.dart';
 import 'package:oversize/features/home/presentation/widgets/home_banner.dart';
 import 'package:oversize/features/home/presentation/widgets/new_products.dart';
 import 'package:oversize/features/home/presentation/widgets/recomended_list.dart';
@@ -33,12 +34,14 @@ class HomeBody extends StatelessWidget {
             "tops".tr(),
             style: AppStyle.w700s18h34DarkBluePrimary.copyWith(fontSize: 21),
           ),
-          10.h,
+          // 10.h,
           TopProductsWidget(),
-          40.h,
+          25.h,
           RowWidget(title: "news".tr()),
           10.h,
           NewProducts(),
+          24.h,
+          FleshSaleItems(discount: 20),
           24.h,
           RowWidget(title: "popular"),
           10.h,
@@ -60,7 +63,7 @@ class HomeBody extends StatelessWidget {
               ),
             ],
           ),
-          16.h,
+          10.h,
           RecomendedList(),
         ],
       ),

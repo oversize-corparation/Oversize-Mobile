@@ -17,7 +17,7 @@ class AppColor {
   );
   // static const Color lightGray50 = Color.fromRGBO(64, 79, 111, 0.50);
   static const Color sale = Color(0xFFF1AEAE);
-  // static const Color lightGray700 = Color(0xFF939497);
+  static const Color deepPink = Color(0xFFEB00CB);
   static const Color deepPurple = Color(0xffE03EDA);
   static const Color boxShadow = Color(0x29000000);
   static const Color white = Colors.white;

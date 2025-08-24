@@ -44,15 +44,15 @@ class PopularItemWidget extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
-              height: 100,
-              width: 110,
+              height: 110,
+              width: 100,
               imageUrl,
               fit: BoxFit.cover,
             ),
           ),
           7.h,
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 qty.toString(),
@@ -60,6 +60,8 @@ class PopularItemWidget extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
+              Icon(Icons.favorite, color: AppColor.deepPurple, size: 18),
+              Spacer(),
               Text(type, style: AppStyle.w500s14h28Black500),
             ],
           ),
