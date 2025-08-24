@@ -7,7 +7,7 @@ class NewProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 280,
+      height: 300,
       child: ListView.separated(
         separatorBuilder: (context, index) => 10.w,
         clipBehavior: Clip.none,

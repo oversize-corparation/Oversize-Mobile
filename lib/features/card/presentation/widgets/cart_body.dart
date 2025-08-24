@@ -1,11 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/widgets/empty_widget.dart';
 import 'package:oversize/core/widgets/row_widget.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 import 'package:oversize/features/card/presentation/widgets/card_item_card.dart';
 import 'package:oversize/features/card/presentation/widgets/most_popular_products.dart';
-import 'package:oversize/features/card/presentation/widgets/popular_item_widget.dart';
 
 class CartBody extends StatelessWidget {
   const CartBody({super.key});
