@@ -11,18 +11,13 @@ class RowWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title.tr(),
-          style: AppStyle.w700s18h34DarkBluePrimary.copyWith(fontSize: 21),
-        ),
+        Text(title.tr(), style: AppStyle.w700s18Raleway.copyWith(fontSize: 21)),
         Text.rich(
           TextSpan(
             children: [
               TextSpan(
                 text: 'all'.tr(),
-                style: AppStyle.w700s18h34DarkBluePrimary.copyWith(
-                  fontSize: 14,
-                ),
+                style: AppStyle.w700s18Raleway.copyWith(fontSize: 14),
               ),
               WidgetSpan(
                 child: Icon(

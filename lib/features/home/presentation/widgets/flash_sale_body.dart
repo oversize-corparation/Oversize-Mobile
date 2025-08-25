@@ -122,3 +122,102 @@ class _FlashSaleBodyState extends State<FlashSaleBody> {
     );
   }
 }
+
+// class DiscountSelectorDemo extends StatefulWidget {
+//   const DiscountSelectorDemo({super.key});
+
+//   @override
+//   State<DiscountSelectorDemo> createState() => _DiscountSelectorDemoState();
+// }
+
+// class _DiscountSelectorDemoState extends State<DiscountSelectorDemo> {
+//   int selectedIndex = 2;
+//   final discounts = ['All', '10%', '20%', '30%', '40%', '50%'];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       body: Center(
+//         child: Container(
+//           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+//           decoration: BoxDecoration(
+//             color: Colors.grey.shade100,
+//             borderRadius: BorderRadius.circular(12),
+//           ),
+//           child: Row(
+//             mainAxisSize: MainAxisSize.min,
+//             children: List.generate(discounts.length, (index) {
+//               final isSelected = index == selectedIndex;
+
+//               return GestureDetector(
+//                 onTap: () {
+//                   setState(() => selectedIndex = index);
+//                 },
+//                 child: Container(
+//                   margin: const EdgeInsets.symmetric(horizontal: 4),
+//                   child: Stack(
+//                     clipBehavior: Clip.none,
+//                     children: [
+//                       AnimatedContainer(
+//                         duration: const Duration(milliseconds: 200),
+//                         padding: const EdgeInsets.symmetric(
+//                           horizontal: 12,
+//                           vertical: 8,
+//                         ),
+//                         decoration: BoxDecoration(
+//                           color: Colors.white,
+//                           border: isSelected
+//                               ? Border.all(color: Colors.blue, width: 2)
+//                               : null,
+//                           borderRadius: BorderRadius.circular(20),
+//                         ),
+//                         child: Text(
+//                           discounts[index],
+//                           style: TextStyle(
+//                             fontWeight: FontWeight.bold,
+//                             fontSize: 13,
+//                             color: isSelected ? Colors.blue : Colors.black87,
+//                           ),
+//                         ),
+//                       ),
+//                       if (isSelected)
+//                         Positioned(
+//                           top: 0, // ichida bo‘lishi uchun
+//                           left: 0,
+//                           right: 0,
+//                           child: CustomPaint(
+//                             size: const Size(10, 5), // juda kichkina
+//                             painter: SmallDownArrowPainter(color: Colors.blue),
+//                           ),
+//                         ),
+//                     ],
+//                   ),
+//                 ),
+//               );
+//             }),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class SmallDownArrowPainter extends CustomPainter {
+//   final Color color;
+//   SmallDownArrowPainter({required this.color});
+
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     final paint = Paint()..color = color;
+//     final path = Path()
+//       ..moveTo(size.width / 2, size.height) // past markaz
+//       ..lineTo(0, 0) // chap yuqori
+//       ..lineTo(size.width, 0) // o‘ng yuqori
+//       ..close();
+//     canvas.drawPath(path, paint);
+//   }
+
+//   @override
+//   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+// }

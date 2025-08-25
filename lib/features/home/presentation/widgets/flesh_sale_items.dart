@@ -21,9 +21,7 @@ class FleshSaleItems extends StatelessWidget {
               children: [
                 Text(
                   "sale".tr(),
-                  style: AppStyle.w700s18h34DarkBluePrimary.copyWith(
-                    fontSize: 21,
-                  ),
+                  style: AppStyle.w700s18Raleway.copyWith(fontSize: 21),
                 ),
                 Spacer(),
                 Icon(Icons.timer_outlined, color: AppColor.deepPurple),

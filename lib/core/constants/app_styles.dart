@@ -61,7 +61,7 @@ class AppStyle {
     color: Colors.black,
   );
 
-  static TextStyle w700s18h34DarkBluePrimary = GoogleFonts.raleway(
+  static TextStyle w700s18Raleway = GoogleFonts.raleway(
     fontWeight: FontWeight.w700,
     fontSize: 18,
     color: AppColor.cancel,

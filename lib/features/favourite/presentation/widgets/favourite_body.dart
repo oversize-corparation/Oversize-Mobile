@@ -19,7 +19,7 @@ class FavouriteBody extends StatelessWidget {
             children: [
               Text(
                 "view".tr(),
-                style: AppStyle.w700s18h34DarkBluePrimary.copyWith(
+                style: AppStyle.w700s18Raleway.copyWith(
                   fontSize: 21,
                   letterSpacing: -0.21,
                 ),

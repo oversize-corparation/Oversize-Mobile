@@ -32,12 +32,12 @@ class HomeBody extends StatelessWidget {
           27.h,
           Text(
             "tops".tr(),
-            style: AppStyle.w700s18h34DarkBluePrimary.copyWith(fontSize: 21),
+            style: AppStyle.w700s18Raleway.copyWith(fontSize: 21),
           ),
           // 10.h,
           TopProductsWidget(),
           25.h,
-          RowWidget(title: "news".tr()),
+          RowWidget(title: "news"),
           10.h,
           NewProducts(),
           24.h,
@@ -51,9 +51,7 @@ class HomeBody extends StatelessWidget {
             children: [
               Text(
                 "foryou".tr(),
-                style: AppStyle.w700s18h34DarkBluePrimary.copyWith(
-                  fontSize: 21,
-                ),
+                style: AppStyle.w700s18Raleway.copyWith(fontSize: 21),
               ),
               5.w,
               Icon(
