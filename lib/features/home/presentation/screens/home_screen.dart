@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
-import 'package:oversize/features/category/presentation/widgets/category_body.dart';
 import 'package:oversize/features/home/presentation/widgets/home_body.dart';
-import 'package:oversize/features/home/presentation/widgets/profile_text_field.dart';
+import 'package:oversize/features/home/presentation/widgets/search_text_field.dart';
+import 'package:oversize/features/home/presentation/widgets/search_body.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     Expanded(
                       flex: 8,
-                      child: ProfileTextField(
+                      child: SearchTextField(
                         hint: "searching".tr(),
                         ontap: value == 1
                             ? () {
@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             transitionBuilder: (child, animation) {
               return FadeTransition(opacity: animation, child: child);
             },
-            child: value == 1 ? HomeBody() : CategoryBody(),
+            child: value == 1 ? HomeBody() : SearchBody(),
           );
         },
       ),

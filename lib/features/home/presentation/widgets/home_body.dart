@@ -37,13 +37,23 @@ class HomeBody extends StatelessWidget {
           // 10.h,
           TopProductsWidget(),
           25.h,
-          RowWidget(title: "news"),
+          RowWidget(
+            title: "news",
+            ontap: () {
+              context.push(AppRouter.newProducts);
+            },
+          ),
           10.h,
           NewProducts(),
           24.h,
           FleshSaleItems(discount: 20),
           24.h,
-          RowWidget(title: "popular"),
+          RowWidget(
+            title: "popular",
+            ontap: () {
+              context.push(AppRouter.popularProducts);
+            },
+          ),
           10.h,
           MostPopularProducts(),
           28.h,

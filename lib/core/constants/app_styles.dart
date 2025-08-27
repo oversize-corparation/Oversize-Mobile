@@ -67,6 +67,12 @@ class AppStyle {
     color: AppColor.cancel,
   );
 
+  static TextStyle w700s21Raleway = GoogleFonts.raleway(
+    fontWeight: FontWeight.w700,
+    fontSize: 21,
+    color: AppColor.cancel,
+  );
+
   static TextStyle w400s14hnunitoSunsBlack = GoogleFonts.nunitoSans(
     fontWeight: FontWeight.w400,
     fontSize: 14,

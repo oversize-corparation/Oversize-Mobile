@@ -1,6 +1,8 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/app/onboard_screen.dart';
 import 'package:oversize/features/home/presentation/screens/flash_sale_screen.dart';
+import 'package:oversize/features/home/presentation/screens/new_products_screen.dart';
+import 'package:oversize/features/home/presentation/screens/popular_products_screen.dart';
 import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 
 class AppRouter {
@@ -24,6 +26,8 @@ class AppRouter {
   static String onboard = '/onboard';
   static String payment = '/payment';
   static String flashSale = '/flashSale';
+  static String newProducts = '/newProducts';
+  static String popularProducts = '/popularProducts';
 
   static GoRouter router = GoRouter(
     // initialLocation: splash,
@@ -41,6 +45,20 @@ class AppRouter {
         name: AppRouter.start,
         builder: (context, state) {
           return StartScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.newProducts,
+        name: AppRouter.newProducts,
+        builder: (context, state) {
+          return NewProductsScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.popularProducts,
+        name: AppRouter.popularProducts,
+        builder: (context, state) {
+          return PopularProductsScreen();
         },
       ),
       GoRoute(

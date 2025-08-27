@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
 
-class ProfileTextField extends StatelessWidget {
+class SearchTextField extends StatelessWidget {
   final String? hint;
   final Function()? ontap;
-  const ProfileTextField({super.key, this.hint, this.ontap});
+  const SearchTextField({super.key, this.hint, this.ontap});
 
   @override
   Widget build(BuildContext context) {

@@ -76,5 +76,8 @@
     "foryou": "Just For You",
     "sale": "Flash Sale",
     "products": "All products",
-    "discount": "Discount"
+    "discount": "Discount",
+    "historySearch": "Search history",
+    "recommendations": "Recommendations",
+    "discover": "Discover"
 }
