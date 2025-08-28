@@ -58,7 +58,7 @@ class PopularItemWidget extends StatelessWidget {
                 qty.toString(),
                 style: AppStyle.w700s18Raleway.copyWith(fontSize: 15),
               ),
-              Icon(Icons.favorite, color: AppColor.deepPurple, size: 18),
+              Icon(Icons.favorite, color: AppColor.deepPurple, size: 16),
               Spacer(),
               Text(type, style: AppStyle.w500s14h28Black500),
             ],

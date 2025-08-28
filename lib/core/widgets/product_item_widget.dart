@@ -34,7 +34,7 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Stack(
                 children: [
                   Container(
