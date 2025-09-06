@@ -12,6 +12,7 @@ class RecomendedList extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         itemCount: 4,
         clipBehavior: Clip.none,
+        padding: EdgeInsets.zero,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 1 / 1.5,

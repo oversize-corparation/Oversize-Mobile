@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/utils/utils.dart';
 import 'package:oversize/features/app/app_export.dart';
@@ -102,10 +103,7 @@ class CartItemCard extends StatelessWidget {
                       Ink(
                         height: 30,
                         width: 37,
-                        decoration: BoxDecoration(
-                          color: AppColor.lightPink,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
+                        decoration: AppDecorations.size,
                         child: Center(
                           child: Text(
                             quantity.toString(),

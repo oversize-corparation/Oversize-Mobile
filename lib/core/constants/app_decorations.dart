@@ -23,4 +23,33 @@ class AppDecorations {
     color: Colors.white,
     borderRadius: BorderRadius.circular(10),
   );
+  static BoxDecoration border16 = BoxDecoration(
+    borderRadius: BorderRadius.circular(16),
+  );
+
+  static BoxDecoration white16r = BoxDecoration(
+    color: AppColor.profileLitTile,
+    borderRadius: BorderRadius.circular(16),
+  );
+
+  static BoxDecoration pink16r = BoxDecoration(
+    color: AppColor.circlePink,
+    borderRadius: BorderRadius.circular(16),
+  );
+
+  static BoxDecoration size = BoxDecoration(
+    color: AppColor.lightPink,
+    borderRadius: BorderRadius.circular(8),
+  );
+
+  static BoxDecoration greySize = BoxDecoration(
+    color: AppColor.circleBlur,
+    borderRadius: BorderRadius.circular(8),
+  );
+
+  static BoxDecoration deliveryContainer = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(8),
+    border: Border.all(color: AppColor.deepPink),
+  );
 }

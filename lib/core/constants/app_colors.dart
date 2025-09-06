@@ -15,7 +15,7 @@ class AppColor {
   static const LinearGradient saleGradient = LinearGradient(
     colors: [Color(0xFFF81140), Color(0xFFFF5790)],
   );
-  // static const Color lightGray50 = Color.fromRGBO(64, 79, 111, 0.50);
+  static const Color shadow = Color(0xFFB5A2A2);
   static const Color sale = Color(0xFFF1AEAE);
   static const Color deepPink = Color(0xFFEB00CB);
   static const Color deepPurple = Color(0xffE03EDA);
@@ -31,4 +31,5 @@ class AppColor {
   static const Color deepBlack = Color(0xff000000);
   static const Color circleBlur = Color(0xFFF8F8F8);
   static const Color error = Color(0xffFF0000);
+  static const Color detailSheet = Color(0xffF8FAFF);
 }

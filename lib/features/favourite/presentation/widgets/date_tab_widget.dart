@@ -1,3 +1,4 @@
+import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/features/app/app_export.dart';
 
@@ -22,7 +23,9 @@ class DateTabWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 250),
         margin: EdgeInsets.symmetric(horizontal: 6),
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        decoration: isSelected ? AppStyle.pink16r : AppStyle.white16r,
+        decoration: isSelected
+            ? AppDecorations.pink16r
+            : AppDecorations.white16r,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,8 +1,5 @@
-import 'dart:ui';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/core/widgets/support_dialog.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/profile/presentation/screens/empty_order_screen.dart';
