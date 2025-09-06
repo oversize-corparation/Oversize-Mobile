@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:oversize/core/constants/app_colors.dart';
+import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/widgets/translator.dart';
@@ -23,7 +24,7 @@ class SupportDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: AppStyle.white16r.copyWith(
+      decoration: AppDecorations.white16r.copyWith(
         borderRadius: const BorderRadius.only(
           topRight: Radius.circular(16),
           topLeft: Radius.circular(16),

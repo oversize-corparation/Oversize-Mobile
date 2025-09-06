@@ -3,6 +3,7 @@ import 'package:oversize/features/app/onboard_screen.dart';
 import 'package:oversize/features/home/presentation/screens/flash_sale_screen.dart';
 import 'package:oversize/features/home/presentation/screens/new_products_screen.dart';
 import 'package:oversize/features/home/presentation/screens/popular_products_screen.dart';
+import 'package:oversize/features/home/presentation/screens/product_detail_screen.dart';
 import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
 
 class AppRouter {
@@ -28,6 +29,7 @@ class AppRouter {
   static String flashSale = '/flashSale';
   static String newProducts = '/newProducts';
   static String popularProducts = '/popularProducts';
+  static String productDetail = '/productDetail';
 
   static GoRouter router = GoRouter(
     // initialLocation: splash,
@@ -45,6 +47,13 @@ class AppRouter {
         name: AppRouter.start,
         builder: (context, state) {
           return StartScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.productDetail,
+        name: AppRouter.productDetail,
+        builder: (context, state) {
+          return ProductDetailScreen();
         },
       ),
       GoRoute(

@@ -1,5 +1,6 @@
 import 'package:oversize/core/widgets/product_item_widget.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
+import 'package:oversize/features/home/presentation/screens/product_detail_screen.dart';
 
 class NewProducts extends StatelessWidget {
   const NewProducts({super.key});
@@ -15,7 +16,9 @@ class NewProducts extends StatelessWidget {
         itemCount: 4,
         itemBuilder: (context, index) {
           return ProductItemWidget(
-            ontap: () {},
+            ontap: () {
+              context.push(AppRouter.productDetail);
+            },
             image:
                 "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1zmZ4r.img?w=1280&h=720&m=4&q=79",
             name: "Lorem ipsum dolor sit amet consectetur",
