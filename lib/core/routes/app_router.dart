@@ -1,5 +1,6 @@
 import 'package:oversize/core/routes/export_route.dart';
 import 'package:oversize/features/app/onboard_screen.dart';
+import 'package:oversize/features/home/presentation/screens/comments_screen.dart';
 import 'package:oversize/features/home/presentation/screens/flash_sale_screen.dart';
 import 'package:oversize/features/home/presentation/screens/new_products_screen.dart';
 import 'package:oversize/features/home/presentation/screens/popular_products_screen.dart';
@@ -30,6 +31,7 @@ class AppRouter {
   static String newProducts = '/newProducts';
   static String popularProducts = '/popularProducts';
   static String productDetail = '/productDetail';
+  static String comments = '/comments';
 
   static GoRouter router = GoRouter(
     // initialLocation: splash,
@@ -193,7 +195,13 @@ class AppRouter {
           return SplashScreen();
         },
       ),
-
+      GoRoute(
+        path: AppRouter.comments,
+        name: AppRouter.comments,
+        builder: (context, state) {
+          return CommentsScreen();
+        },
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             MainScreen(navigationShell: navigationShell),

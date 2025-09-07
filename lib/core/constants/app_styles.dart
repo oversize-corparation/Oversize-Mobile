@@ -66,6 +66,13 @@ class AppStyle {
     color: AppColor.primaryDark,
   );
 
+  static TextStyle w600s16h22DarkBluePrimary = GoogleFonts.raleway(
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    height: 22 / 18,
+    color: AppColor.primaryDark,
+  );
+
   static TextStyle w600s18h22DarkBluePrimary = GoogleFonts.roboto(
     fontWeight: FontWeight.w600,
     fontSize: 18,
@@ -100,6 +107,12 @@ class AppStyle {
   static TextStyle w700s21Raleway = GoogleFonts.raleway(
     fontWeight: FontWeight.w700,
     fontSize: 21,
+    color: AppColor.cancel,
+  );
+
+  static TextStyle w700s28Raleway = GoogleFonts.raleway(
+    fontWeight: FontWeight.w700,
+    fontSize: 28,
     color: AppColor.cancel,
   );
 

@@ -1,6 +1,5 @@
 import 'package:oversize/core/widgets/product_item_widget.dart';
 import 'package:oversize/features/auth/presentation/auth.dart';
-import 'package:oversize/features/home/presentation/screens/product_detail_screen.dart';
 
 class NewProducts extends StatelessWidget {
   const NewProducts({super.key});

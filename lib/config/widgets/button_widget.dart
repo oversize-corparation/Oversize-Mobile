@@ -4,12 +4,14 @@ class ButtonWidget extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
   final bool isLoading; // ✅ added
+  final double? height;
 
   const ButtonWidget({
     super.key,
     required this.onPressed,
     required this.text,
     this.isLoading = false, // ✅ default false
+    this.height,
   });
 
   @override
@@ -21,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(32),
         ),
         backgroundColor: AppColor.deepPurple,
-        fixedSize: const Size(double.maxFinite, 61),
+        fixedSize: Size(double.maxFinite, height ?? 61),
       ),
       child: isLoading
           ? SizedBox(

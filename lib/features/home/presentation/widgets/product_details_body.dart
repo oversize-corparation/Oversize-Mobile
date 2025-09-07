@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:oversize/config/widgets/button_widget.dart';
 import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/core/widgets/row_widget.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/card/presentation/widgets/most_popular_products.dart';
+import 'package:oversize/features/home/presentation/widgets/comments_tile.dart';
 import 'package:oversize/features/home/presentation/widgets/recomended_list.dart';
 import 'package:oversize/features/home/presentation/widgets/variation_sheet.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -280,6 +282,40 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                   ),
                 ),
                 30.h,
+                Text("Rating & Reviews", style: AppStyle.w800s20RalewayBlack),
+                16.h,
+                Row(
+                  children: [
+                    for (int i = 0; i < 5; i++)
+                      Icon(Icons.star, color: Colors.amber),
+                    14.w,
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 6,
+                        horizontal: 11,
+                      ),
+                      decoration: AppDecorations.size,
+                      child: Text("5/5", style: AppStyle.w700s15Raleway),
+                    ),
+                  ],
+                ),
+                20.h,
+                CommentsTile(
+                  rating: 3,
+                  maxLines: 3,
+                  viewerName: "Veronika",
+                  comment:
+                      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed ",
+                ),
+                20.h,
+                ButtonWidget(
+                  onPressed: () {
+                    context.push(AppRouter.comments);
+                  },
+                  text: "View All Reviews",
+                  height: 40,
+                ),
+                23.h,
                 RowWidget(title: "popular"),
                 10.h,
                 MostPopularProducts(),
