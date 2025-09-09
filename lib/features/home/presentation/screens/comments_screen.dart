@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/home/presentation/widgets/comments_tile.dart';
@@ -11,7 +12,7 @@ class CommentsScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Reviews", style: AppStyle.w700s28Raleway),
+        title: Text("review".tr(), style: AppStyle.w700s28Raleway),
         automaticallyImplyLeading: false,
       ),
       body: ListView.separated(
