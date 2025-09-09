@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/config/widgets/button_widget.dart';
 import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
@@ -146,7 +147,10 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Variations", style: AppStyle.w800s20RalewayBlack),
+                    Text(
+                      "variations".tr(),
+                      style: AppStyle.w800s20RalewayBlack,
+                    ),
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 12,
@@ -196,9 +200,12 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                   ],
                 ),
                 24.h,
-                Text("Specifications", style: AppStyle.w800s20RalewayBlack),
+                Text(
+                  "specifications".tr(),
+                  style: AppStyle.w800s20RalewayBlack,
+                ),
                 12.h,
-                Text("Material", style: AppStyle.w700s18Raleway),
+                Text("Material".tr(), style: AppStyle.w700s18Raleway),
                 8.h,
                 Wrap(
                   spacing: 8,
@@ -215,7 +222,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                   }).toList(),
                 ),
                 15.h,
-                Text("Origin", style: AppStyle.w700s18Raleway),
+                Text("Origin".tr(), style: AppStyle.w700s18Raleway),
                 8.h,
                 Wrap(
                   spacing: 8,
@@ -235,7 +242,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Size guide", style: AppStyle.w700s17Raleway),
+                    Text("guide".tr(), style: AppStyle.w700s17Raleway),
                     GestureDetector(
                       onTap: () {},
                       child: CircleAvatar(
@@ -251,7 +258,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                   ],
                 ),
                 23.h,
-                Text("Delivery", style: AppStyle.w800s20RalewayBlack),
+                Text("Delivery".tr(), style: AppStyle.w800s20RalewayBlack),
                 12.h,
                 Container(
                   decoration: AppDecorations.deliveryContainer,
@@ -262,7 +269,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                     ),
                     child: Row(
                       children: [
-                        Text("Standart", style: AppStyle.w500s16hBlack),
+                        Text("Standart".tr(), style: AppStyle.w500s16hBlack),
                         10.w,
                         Container(
                           padding: EdgeInsets.symmetric(
@@ -282,7 +289,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                   ),
                 ),
                 30.h,
-                Text("Rating & Reviews", style: AppStyle.w800s20RalewayBlack),
+                Text("ratingReview".tr(), style: AppStyle.w800s20RalewayBlack),
                 16.h,
                 Row(
                   children: [
@@ -312,7 +319,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                   onPressed: () {
                     context.push(AppRouter.comments);
                   },
-                  text: "View All Reviews",
+                  text: "allComments".tr(),
                   height: 40,
                 ),
                 23.h,
@@ -320,7 +327,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                 10.h,
                 MostPopularProducts(),
                 22.h,
-                Text("You Might Like", style: AppStyle.w800s20RalewayBlack),
+                Text("mightLike".tr(), style: AppStyle.w800s20RalewayBlack),
                 20.h,
                 RecomendedList(),
               ],

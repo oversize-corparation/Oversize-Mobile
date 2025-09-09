@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
 import 'package:oversize/features/app/app_export.dart';
@@ -150,7 +151,7 @@ class _VariationSheetState extends State<VariationSheet> {
                         ),
                         SizedBox(height: 30),
                         Text(
-                          "Color Options",
+                          "colorOption".tr(),
                           style: AppStyle.w800s20RalewayBlack,
                         ),
                         15.h,
@@ -193,7 +194,7 @@ class _VariationSheetState extends State<VariationSheet> {
                         ),
 
                         15.h,
-                        Text("Size", style: AppStyle.w800s20RalewayBlack),
+                        Text("sizes".tr(), style: AppStyle.w800s20RalewayBlack),
                         Wrap(
                           children: [
                             ...["S", "M", "L", "XL", "XXL", "XXXL"].map((size) {
@@ -229,7 +230,7 @@ class _VariationSheetState extends State<VariationSheet> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Quantity",
+                              "quantity".tr(),
                               style: AppStyle.w800s20RalewayBlack,
                             ),
                             Spacer(),
@@ -293,7 +294,7 @@ class _VariationSheetState extends State<VariationSheet> {
                               icon: Icon(Icons.favorite_border, size: 24),
                             ),
                           ),
-                          16.w,
+                          10.w,
                           Expanded(
                             child: GestureDetector(
                               onTap: () {},
@@ -304,7 +305,7 @@ class _VariationSheetState extends State<VariationSheet> {
                                 ),
                                 child: Center(
                                   child: Text(
-                                    "Add to cart",
+                                    "addCart".tr(),
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500,
@@ -314,7 +315,7 @@ class _VariationSheetState extends State<VariationSheet> {
                               ),
                             ),
                           ),
-                          16.w,
+                          10.w,
                           Expanded(
                             child: GestureDetector(
                               onTap: () {},
@@ -325,7 +326,7 @@ class _VariationSheetState extends State<VariationSheet> {
                                 ),
                                 child: Center(
                                   child: Text(
-                                    "Buy now",
+                                    "buy".tr(),
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500,

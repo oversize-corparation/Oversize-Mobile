@@ -79,5 +79,20 @@
     "discount": "Скидка",
     "historySearch": "История поиска",
     "recommendations": "Рекомендации",
-    "discover": "Открыть"
+    "discover": "Открыть",
+    "variations": "Вариации",
+    "specifications": "Спецификация",
+    "Material": "Материал",
+    "Origin": "Источник",
+    "guide": "Руководство по размерам",
+    "Delivery": "Доставка",
+    "Standart": "Стандарт",
+    "ratingReview": "Рейтинг & Отзывы",
+    "allComments": "Просмотреть все отзывы",
+    "mightLike": "Вам может понравиться",
+    "review": "Отзывы",
+    "addCart": "Добавить в корзину",
+    "buy": "Купить сейчас",
+    "quantity": "Количество",
+    "colorOption": "Цвета"
 }

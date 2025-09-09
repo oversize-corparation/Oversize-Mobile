@@ -79,5 +79,20 @@
     "discount": "Discount",
     "historySearch": "Search history",
     "recommendations": "Recommendations",
-    "discover": "Discover"
+    "discover": "Discover",
+    "variations": "Variations",
+    "specifications": "Specifications",
+    "Material": "Material",
+    "Origin": "Origin",
+    "guide": "Size guide",
+    "Delivery": "Delivery",
+    "Standart": "Standart",
+    "ratingReview": "Rating & Reviews",
+    "allComments": "View All Reviews",
+    "mightLike": "You Might Like",
+    "review": "Reviews",
+    "addCart": "Add to cart",
+    "buy": "Buy now",
+    "quantity": "Quantity",
+    "colorOption": "Color Options"
 }

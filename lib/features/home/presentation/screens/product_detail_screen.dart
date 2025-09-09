@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:oversize/core/constants/app_decorations.dart';
 import 'package:oversize/core/constants/app_styles.dart';
@@ -45,7 +46,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         title: AnimatedOpacity(
           opacity: _showTitle ? 1.0 : 0.0,
           duration: Duration(milliseconds: 200),
-          child: Text("Product Details", style: AppStyle.w800s20RalewayBlack),
+          child: Text("Product Name", style: AppStyle.w800s20RalewayBlack),
         ),
       ),
       body: SizedBox.expand(
@@ -82,7 +83,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   icon: Icon(CupertinoIcons.heart, size: 24),
                 ),
               ),
-              SizedBox(width: 16),
+              10.w,
               Expanded(
                 child: GestureDetector(
                   onTap: () {},
@@ -93,14 +94,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Add to cart",
+                        "addCart".tr(),
                         style: AppStyle.w300s16hnunitoSunsWhite,
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 16),
+              10.w,
               Expanded(
                 child: GestureDetector(
                   onTap: () {},
@@ -111,7 +112,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Buy now",
+                        "buy".tr(),
                         style: AppStyle.w300s16hnunitoSunsWhite,
                       ),
                     ),
