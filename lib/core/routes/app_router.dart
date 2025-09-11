@@ -1,11 +1,5 @@
 import 'package:oversize/core/routes/export_route.dart';
-import 'package:oversize/features/app/onboard_screen.dart';
-import 'package:oversize/features/home/presentation/screens/comments_screen.dart';
-import 'package:oversize/features/home/presentation/screens/flash_sale_screen.dart';
-import 'package:oversize/features/home/presentation/screens/new_products_screen.dart';
-import 'package:oversize/features/home/presentation/screens/popular_products_screen.dart';
-import 'package:oversize/features/home/presentation/screens/product_detail_screen.dart';
-import 'package:oversize/features/profile/presentation/screens/payment_screen.dart';
+import 'package:oversize/features/category/presentation/screens/filter_screen.dart';
 
 class AppRouter {
   static String home = "/home";
@@ -32,6 +26,7 @@ class AppRouter {
   static String popularProducts = '/popularProducts';
   static String productDetail = '/productDetail';
   static String comments = '/comments';
+  static String filter = '/filter';
 
   static GoRouter router = GoRouter(
     // initialLocation: splash,
@@ -70,6 +65,13 @@ class AppRouter {
         name: AppRouter.popularProducts,
         builder: (context, state) {
           return PopularProductsScreen();
+        },
+      ),
+      GoRoute(
+        path: AppRouter.filter,
+        name: AppRouter.filter,
+        builder: (context, state) {
+          return FilterScreen();
         },
       ),
       GoRoute(

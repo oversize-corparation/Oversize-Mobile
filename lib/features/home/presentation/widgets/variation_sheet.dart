@@ -9,6 +9,7 @@ class VariationSheet extends StatefulWidget {
   final String? selectedSize;
   final List<String>? images;
   final String? qty;
+
   const VariationSheet({
     super.key,
     this.selectedColor,
@@ -17,14 +18,14 @@ class VariationSheet extends StatefulWidget {
     this.qty,
   });
 
-  static show(
+  static Future<Map<String, String>?> show(
     BuildContext context,
     String? selectedColor,
     String? selectedSize,
     List<String> images,
     String? qty,
   ) {
-    return showModalBottomSheet(
+    return showModalBottomSheet<Map<String, String>?>(
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       context: context,
@@ -95,7 +96,7 @@ class _VariationSheetState extends State<VariationSheet> {
                       controller: scrollController,
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       children: [
-                        SizedBox(height: 20),
+                        20.h,
                         Row(
                           children: [
                             ClipRRect(
@@ -107,7 +108,7 @@ class _VariationSheetState extends State<VariationSheet> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            SizedBox(width: 16),
+                            16.w,
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,7 +117,7 @@ class _VariationSheetState extends State<VariationSheet> {
                                     "\$17,00",
                                     style: AppStyle.w800s26RalewayBlack,
                                   ),
-                                  SizedBox(height: 10),
+                                  10.h,
                                   Row(
                                     children: [
                                       Container(
@@ -126,11 +127,11 @@ class _VariationSheetState extends State<VariationSheet> {
                                         ),
                                         decoration: AppDecorations.size,
                                         child: Text(
-                                          _selectedColor ?? "",
+                                          _selectedColor ?? "Color",
                                           style: TextStyle(fontSize: 14),
                                         ),
                                       ),
-                                      SizedBox(width: 8),
+                                      8.w,
                                       Container(
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 12,
@@ -138,7 +139,7 @@ class _VariationSheetState extends State<VariationSheet> {
                                         ),
                                         decoration: AppDecorations.size,
                                         child: Text(
-                                          _selectedSize ?? "",
+                                          _selectedSize ?? "Size",
                                           style: TextStyle(fontSize: 14),
                                         ),
                                       ),
@@ -149,7 +150,7 @@ class _VariationSheetState extends State<VariationSheet> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        30.h,
                         Text(
                           "colorOption".tr(),
                           style: AppStyle.w800s20RalewayBlack,
@@ -192,7 +193,6 @@ class _VariationSheetState extends State<VariationSheet> {
                             }),
                           ],
                         ),
-
                         15.h,
                         Text("sizes".tr(), style: AppStyle.w800s20RalewayBlack),
                         Wrap(
@@ -210,7 +210,7 @@ class _VariationSheetState extends State<VariationSheet> {
                                   margin: EdgeInsets.all(8),
                                   decoration: _selectedSize == size
                                       ? AppDecorations.size.copyWith(
-                                          border: BoxBorder.all(
+                                          border: Border.all(
                                             color: AppColor.deepPurple,
                                           ),
                                         )
@@ -226,7 +226,6 @@ class _VariationSheetState extends State<VariationSheet> {
                         ),
                         34.h,
                         Row(
-                          spacing: 10,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
@@ -240,7 +239,15 @@ class _VariationSheetState extends State<VariationSheet> {
                                 size: 55,
                                 color: AppColor.deepPurple,
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  int currentQty =
+                                      int.tryParse(_qty ?? "0") ?? 0;
+                                  if (currentQty > 0) {
+                                    _qty = (currentQty - 1).toString();
+                                  }
+                                });
+                              },
                             ),
                             Container(
                               height: 40,
@@ -248,7 +255,7 @@ class _VariationSheetState extends State<VariationSheet> {
                               decoration: AppDecorations.size,
                               child: Center(
                                 child: Text(
-                                  "${_qty ?? 0} ",
+                                  _qty ?? '0',
                                   style: TextStyle(fontSize: 16),
                                 ),
                               ),
@@ -259,7 +266,13 @@ class _VariationSheetState extends State<VariationSheet> {
                                 color: AppColor.deepPurple,
                                 size: 55,
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  int currentQty =
+                                      int.tryParse(_qty ?? "0") ?? 0;
+                                  _qty = (currentQty + 1).toString();
+                                });
+                              },
                             ),
                           ],
                         ),
@@ -297,7 +310,13 @@ class _VariationSheetState extends State<VariationSheet> {
                           10.w,
                           Expanded(
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pop(context, {
+                                  'color': _selectedColor ?? 'Color',
+                                  'size': _selectedSize ?? 'Size',
+                                  'qty': _qty ?? '0',
+                                });
+                              },
                               child: Container(
                                 height: 50,
                                 decoration: AppDecorations.border16.copyWith(
@@ -318,7 +337,13 @@ class _VariationSheetState extends State<VariationSheet> {
                           10.w,
                           Expanded(
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pop(context, {
+                                  'color': _selectedColor ?? 'Color',
+                                  'size': _selectedSize ?? 'Size',
+                                  'qty': _qty ?? '0',
+                                });
+                              },
                               child: Container(
                                 height: 50,
                                 decoration: AppDecorations.border16.copyWith(

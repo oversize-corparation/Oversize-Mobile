@@ -9,6 +9,12 @@ class AppStyle {
     color: Colors.white,
   );
 
+  static TextStyle w300s22hnunitoSunsWhite = GoogleFonts.nunitoSans(
+    fontWeight: FontWeight.w300,
+    fontSize: 22,
+    color: Colors.white,
+  );
+
   static TextStyle w400s14hnunitoSunsBlack = GoogleFonts.nunitoSans(
     fontWeight: FontWeight.w400,
     fontSize: 14,
@@ -25,11 +31,6 @@ class AppStyle {
     fontWeight: FontWeight.w400,
     fontSize: 13,
     height: 18 / 13,
-  );
-
-  static BoxDecoration lightGray400R16NoBorder = BoxDecoration(
-    color: AppColor.lightGray400,
-    borderRadius: BorderRadius.circular(16),
   );
 
   static TextStyle w500s13RalewayPink = GoogleFonts.raleway(
@@ -57,6 +58,11 @@ class AppStyle {
     fontSize: 15,
     height: 20 / 15,
     color: AppColor.primaryDark,
+  );
+
+  static TextStyle w500s19Raleway = GoogleFonts.raleway(
+    fontWeight: FontWeight.w500,
+    fontSize: 19,
   );
 
   static TextStyle w600s15h20DarkBluePrimary = GoogleFonts.roboto(
@@ -114,6 +120,12 @@ class AppStyle {
     fontWeight: FontWeight.w700,
     fontSize: 28,
     color: AppColor.cancel,
+  );
+
+  static TextStyle w800s13Ralewaypink = GoogleFonts.raleway(
+    fontWeight: FontWeight.w800,
+    fontSize: 13,
+    color: AppColor.lightPink2,
   );
 
   static TextStyle w800s17h22Dark = GoogleFonts.roboto(

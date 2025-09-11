@@ -1,10 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:oversize/core/constants/app_images.dart';
 import 'package:oversize/core/constants/app_styles.dart';
-import 'package:oversize/core/extension/space_extension.dart';
 import 'package:oversize/core/widgets/product_item_widget.dart';
+import 'package:oversize/features/auth/presentation/auth.dart';
 
 class CategoriesProducts extends StatelessWidget {
   const CategoriesProducts({super.key});
@@ -19,7 +16,9 @@ class CategoriesProducts extends StatelessWidget {
             children: [
               Text("products".tr(), style: AppStyle.w700s18Raleway),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(AppRouter.filter);
+                },
                 icon: SvgPicture.asset(AppImages.filter),
               ),
             ],

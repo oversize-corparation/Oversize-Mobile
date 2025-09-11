@@ -65,4 +65,14 @@ class AppDecorations {
     borderRadius: BorderRadius.circular(8),
     border: Border.all(color: AppColor.deepPink),
   );
+
+  static BoxDecoration lightGray400R16NoBorder = BoxDecoration(
+    color: AppColor.lightGray400,
+    borderRadius: BorderRadius.circular(16),
+  );
+
+  static BoxDecoration lightPinkBorderR20 = BoxDecoration(
+    color: AppColor.lightPink,
+    borderRadius: BorderRadius.circular(20),
+  );
 }

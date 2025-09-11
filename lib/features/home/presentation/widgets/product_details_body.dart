@@ -7,6 +7,7 @@ import 'package:oversize/core/widgets/row_widget.dart';
 import 'package:oversize/features/app/app_export.dart';
 import 'package:oversize/features/card/presentation/widgets/most_popular_products.dart';
 import 'package:oversize/features/home/presentation/widgets/comments_tile.dart';
+import 'package:oversize/features/home/presentation/widgets/flesh_time.dart';
 import 'package:oversize/features/home/presentation/widgets/recomended_list.dart';
 import 'package:oversize/features/home/presentation/widgets/variation_sheet.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -121,9 +122,17 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
               children: [
                 10.h,
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("\$17,00", style: AppStyle.w800s26RalewayBlack),
+                    Spacer(),
+                    Icon(Icons.timer_outlined, color: AppColor.deepPurple),
+                    10.w,
+                    FleshTime(time: "00"),
+                    5.w,
+                    FleshTime(time: "36"),
+                    5.w,
+                    FleshTime(time: "58"),
+                    24.w,
                     CircleAvatar(
                       backgroundColor: AppColor.lightPink,
                       child: Transform(
@@ -151,29 +160,47 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                       "variations".tr(),
                       style: AppStyle.w800s20RalewayBlack,
                     ),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 6,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        "${_selectedColor ?? 'Color'} - ${_selectedSize ?? 'Size'}",
-                        style: AppStyle.w500s14h28Black500,
-                      ),
+                    10.w,
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: ["Color", "Size"].map((e) {
+                        String text;
+                        if (e == "Color") {
+                          text = _selectedColor ?? "Color";
+                        } else if (e == "Size") {
+                          text = _selectedSize ?? "Size";
+                        } else {
+                          text = e;
+                        }
+
+                        return Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
+                          decoration: AppDecorations.greySize,
+                          child: Text(text, style: AppStyle.w500s14h28Black500),
+                        );
+                      }).toList(),
                     ),
                     Spacer(),
                     GestureDetector(
-                      onTap: () => VariationSheet.show(
-                        context,
-                        _selectedColor,
-                        _selectedSize,
-                        images,
-                        "0",
-                      ),
+                      onTap: () async {
+                        final result = await VariationSheet.show(
+                          context,
+                          _selectedColor,
+                          _selectedSize,
+                          images,
+                          "0",
+                        );
+                        if (result != null) {
+                          setState(() {
+                            _selectedColor = result['color'];
+                            _selectedSize = result['size'];
+                          });
+                        }
+                      },
                       child: CircleAvatar(
                         radius: 20,
                         backgroundColor: AppColor.deepPurple,

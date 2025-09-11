@@ -17,3 +17,10 @@ export 'package:oversize/features/profile/presentation/screens/language_screen.d
 export 'package:oversize/features/profile/presentation/screens/setting_screen.dart';
 export 'package:oversize/features/profile/presentation/screens/shipping_adres.dart';
 export 'package:oversize/features/app/splash_screen.dart';
+export 'package:oversize/features/app/onboard_screen.dart';
+export 'package:oversize/features/home/presentation/screens/comments_screen.dart';
+export 'package:oversize/features/home/presentation/screens/flash_sale_screen.dart';
+export 'package:oversize/features/home/presentation/screens/new_products_screen.dart';
+export 'package:oversize/features/home/presentation/screens/popular_products_screen.dart';
+export 'package:oversize/features/home/presentation/screens/product_detail_screen.dart';
+export 'package:oversize/features/profile/presentation/screens/payment_screen.dart';

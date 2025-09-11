@@ -38,7 +38,7 @@ class SupportDialog extends StatelessWidget {
             child: Container(
               width: 60,
               height: 4,
-              decoration: AppStyle.lightGray400R16NoBorder,
+              decoration: AppDecorations.lightGray400R16NoBorder,
             ),
           ),
           16.h,
@@ -57,7 +57,7 @@ class SupportDialog extends StatelessWidget {
           ),
           16.h,
           Container(
-            decoration: AppStyle.lightGray400R16NoBorder.copyWith(
+            decoration: AppDecorations.lightGray400R16NoBorder.copyWith(
               color: AppColor.lightGray100,
             ),
             child: ListTile(
@@ -80,7 +80,7 @@ class SupportDialog extends StatelessWidget {
           ),
           16.h,
           Container(
-            decoration: AppStyle.lightGray400R16NoBorder.copyWith(
+            decoration: AppDecorations.lightGray400R16NoBorder.copyWith(
               color: AppColor.lightGray100,
             ),
             child: ListTile(
@@ -99,7 +99,7 @@ class SupportDialog extends StatelessWidget {
           ),
           16.h,
           Container(
-            decoration: AppStyle.lightGray400R16NoBorder.copyWith(
+            decoration: AppDecorations.lightGray400R16NoBorder.copyWith(
               color: AppColor.lightGray100,
             ),
             child: ListTile(

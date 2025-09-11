@@ -94,5 +94,17 @@
     "addCart": "Savatga joylash",
     "buy": "Xarid qilish",
     "quantity": "Miqdor",
-    "colorOption": "Ranglar"
+    "colorOption": "Ranglar",
+    "filter": "Filtr",
+    "clear": "Bekor qilish",
+    "apply": "Qo‘llash",
+    "size": "O'lcham",
+    "clothes": "Ko'ylak",
+    "shoes": "Poyabzal",
+    "color": "Rang",
+    "price": "Narx",
+    "popularF": "Ommabop",
+    "newest": "Eng yangi",
+    "hToLow": "Qimmatdan arzoniga",
+    "lToHigh": "Arzondan qimmatiga"
 }

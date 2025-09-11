@@ -9,7 +9,7 @@ class FleshTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
+    return Container(
       height: 30,
       width: 33,
       decoration: color ? AppDecorations.flashInk : AppDecorations.flashwhite,

@@ -94,5 +94,17 @@
     "addCart": "Add to cart",
     "buy": "Buy now",
     "quantity": "Quantity",
-    "colorOption": "Color Options"
+    "colorOption": "Color Options",
+    "filter": "Filter",
+    "clear": "Clear",
+    "apply": "Apply",
+    "size": "Size",
+    "clothes": "Clothes",
+    "shoes": "Shoes",
+    "color": "Color",
+    "price": "Price",
+    "popularF": "Popular",
+    "newest": "Newest",
+    "hToLow": "Price High to Low",
+    "lToHigh": "Price Low to High"
 }

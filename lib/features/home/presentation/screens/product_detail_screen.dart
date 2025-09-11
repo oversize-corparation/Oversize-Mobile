@@ -74,10 +74,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               Container(
                 width: 50,
                 height: 50,
-                decoration: BoxDecoration(
-                  color: AppColor.lightPink,
-                  borderRadius: BorderRadius.circular(25),
-                ),
+                decoration: AppDecorations.greySize,
                 child: IconButton(
                   onPressed: () {},
                   icon: Icon(CupertinoIcons.heart, size: 24),

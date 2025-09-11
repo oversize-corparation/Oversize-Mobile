@@ -32,4 +32,5 @@ class AppColor {
   static const Color circleBlur = Color(0xFFF8F8F8);
   static const Color error = Color(0xffFF0000);
   static const Color detailSheet = Color(0xffF8FAFF);
+  static const Color lightPink2 = Color(0xFFFF7AB8);
 }
